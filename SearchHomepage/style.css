@@ -1,0 +1,28 @@
+.my-search {
+    margin: 300px auto 0 auto;
+}
+
+/* You can center a div, but if you have text
+ * you have to specifically center the text-align
+ */
+.my-search h1 {
+    text-align: center;
+    color: rebeccapurple;
+}
+
+/* You don't need a form to have an input
+form {
+    margin: 0 auto;
+    width: 500px;
+}
+*/
+
+/* Inputs are inline, so if you want to center it
+ * you need to make it a block */
+input#search {
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+    border: 0;
+    box-shadow: 6px 5px 5px grey; /* x-offset, y-offset, blur-radius, color */
+}
