@@ -3,4 +3,4 @@ A collection of my personal solutions while going through the Odin Project
 bootcamp
 
 # Projects
-- Search Homepage
+
