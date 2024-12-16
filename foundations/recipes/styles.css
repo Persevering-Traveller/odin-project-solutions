@@ -1,0 +1,18 @@
+/* Thank you to LoSpec and Inkpendude for the Eulbink Palette */
+/* https://lospec.com/palette-list/eulbink */
+
+body {
+    background-color: #201533;
+}
+
+p, h1, h2, li {
+    color: #fff;
+}
+
+a:link {
+    color: #0ce6f2;
+}
+
+a:active {
+    color: #0098db;
+}
