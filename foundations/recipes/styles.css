@@ -11,6 +11,11 @@ p, h1, h2, li {
 
 h1, h2 {
     background-color: #203562;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+p, li, a {
+    font-family:Arial, Helvetica, sans-serif
 }
 
 a:link {
