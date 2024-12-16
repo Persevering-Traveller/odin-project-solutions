@@ -9,6 +9,10 @@ p, h1, h2, li {
     color: #fff;
 }
 
+h1, h2 {
+    background-color: #203562;
+}
+
 a:link {
     color: #0ce6f2;
 }
