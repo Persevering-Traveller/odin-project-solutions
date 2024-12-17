@@ -54,4 +54,8 @@ img.enchiladas {
     img.catfish, img.enchiladas, img.chopped-cheese {
         width: 90%;
     }
+
+    h1, h2 {
+        text-align: center;
+    }
 }
