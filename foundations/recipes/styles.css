@@ -46,6 +46,11 @@ img.enchiladas {
 }
 
 @media screen and (max-width: 430px) {
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+
     img.catfish, img.enchiladas, img.chopped-cheese {
         width: 90%;
     }
