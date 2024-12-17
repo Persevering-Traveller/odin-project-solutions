@@ -59,3 +59,9 @@ img.enchiladas {
         text-align: center;
     }
 }
+
+.card {
+    background-color: #252446;
+    padding: 8px 24px;
+    margin: 8px;
+}
