@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    font-family: Roboto, 'Open Sans', sans-serif;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    background-color: #3882f6;
+    color: #f9faf8;
+}
+
+.section-header {
+    background-color: #1f2937;
+}
+
+.main-title {
+    font-size: 48px;
+    color: #f9faf8;
+    font-weight: 900;
+}
+
+li.link, .subtext {
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+li.logo {
+    font-size: 24px;
+    color: #f9faf8;
+    flex: 1;
+}
