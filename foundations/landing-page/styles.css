@@ -14,8 +14,13 @@ button {
     color: #f9faf8;
 }
 
-.section-header {
+.section-blue {
     background-color: #1f2937;
+}
+
+.section-header {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .header ul {
