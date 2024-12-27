@@ -30,6 +30,12 @@ button {
     gap: 16px;
 }
 
+.hero {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+
 .main-title {
     font-size: 48px;
     color: #f9faf8;
