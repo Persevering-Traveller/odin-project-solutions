@@ -14,9 +14,12 @@ button {
     color: #f9faf8;
 }
 
-.section-blue {
-    background-color: #1f2937;
+.section {
     padding: 16px 0;
+}
+
+.blue {
+    background-color: #1f2937;
 }
 
 .section-header {
