@@ -56,8 +56,8 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
-    background-color: grey;
+    color: #f9faf8;
+    background-color: #a1a9b873;
     height: 200px;
     flex: 1;
 }
