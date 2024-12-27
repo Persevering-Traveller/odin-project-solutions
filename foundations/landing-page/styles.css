@@ -42,6 +42,17 @@ button {
     font-weight: 900;
 }
 
+.img-placeholder {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: grey;
+    width: 600px;
+    height: 200px;
+}
+
 li.link, .subtext {
     font-size: 18px;
     color: #e5e7eb;
