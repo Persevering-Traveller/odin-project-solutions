@@ -33,7 +33,12 @@ button {
 .hero {
     display: flex;
     justify-content: space-between;
+    gap: 50px;
     margin: 80px 0;
+}
+
+.hero-text {
+    flex: 1;
 }
 
 .main-title {
@@ -49,8 +54,8 @@ button {
     text-align: center;
     color: white;
     background-color: grey;
-    width: 600px;
     height: 200px;
+    flex: 1;
 }
 
 li.link, .subtext {
