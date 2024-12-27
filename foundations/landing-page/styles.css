@@ -18,6 +18,13 @@ button {
     background-color: #1f2937;
 }
 
+.header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
 .main-title {
     font-size: 48px;
     color: #f9faf8;
