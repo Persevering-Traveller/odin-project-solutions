@@ -17,6 +17,7 @@ button {
     border-style: none;
     border-radius: 8px;
     padding: 8px 32px;
+    margin-top: 16px;
 }
 
 .section {
