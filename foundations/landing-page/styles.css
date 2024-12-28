@@ -127,6 +127,8 @@ li.logo {
     font-weight: lighter;
     font-style: italic;
     color: #1f2937;
+
+    padding: 100px;
 }
 
 .quote-source {
