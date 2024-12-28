@@ -32,6 +32,10 @@ button {
     background-color: white;
 }
 
+.grey {
+    background-color: #e5e7eb;
+}
+
 .content {
     width: 70%;
     margin: 0 auto;
