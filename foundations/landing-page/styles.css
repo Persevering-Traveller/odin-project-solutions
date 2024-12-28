@@ -90,3 +90,9 @@ li.logo {
     color: #1f2937;
     padding: 32px 0;
 }
+
+.illustration-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
