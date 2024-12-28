@@ -4,5 +4,5 @@ bootcamp
 
 # Projects
 ## Foundations
-Recipes
-Landing Page
+* Recipes
+* Landing Page
