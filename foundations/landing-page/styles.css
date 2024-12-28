@@ -101,3 +101,10 @@ li.logo {
     display: flex;
     flex-direction: column;
 }
+
+.illustration {
+    width: 200px;
+    height: 200px;
+    border:#3882f6 5px solid;
+    border-radius: 8px;
+}
