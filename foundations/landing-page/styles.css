@@ -101,6 +101,7 @@ li.logo {
     display: flex;
     flex-direction: column;
     width: 180px;
+    padding: 0 32px;
 }
 
 .illustration {
