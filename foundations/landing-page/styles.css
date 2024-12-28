@@ -96,3 +96,8 @@ li.logo {
     justify-content: space-between;
     align-items: center;
 }
+
+.illustration-group {
+    display: flex;
+    flex-direction: column;
+}
