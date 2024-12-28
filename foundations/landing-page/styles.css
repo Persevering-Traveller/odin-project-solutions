@@ -103,10 +103,10 @@ li.logo {
 }
 
 .illustration {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border:#3882f6 5px solid;
-    border-radius: 8px;
+    border-radius: 18px;
 }
 
 .illustration-subtext {
