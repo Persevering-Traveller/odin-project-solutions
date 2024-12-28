@@ -108,3 +108,9 @@ li.logo {
     border:#3882f6 5px solid;
     border-radius: 8px;
 }
+
+.illustration-subtext {
+    font-size: 18px;
+    text-align: center;
+    color: #1f2937;
+}
