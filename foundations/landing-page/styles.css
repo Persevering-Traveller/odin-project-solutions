@@ -169,3 +169,11 @@ li.logo {
 .sign-up-button {
     border: 3px solid #f9faf8;
 }
+
+.footer-text {
+    text-align: center;
+    color: #e5e7eb;
+    font-size: 18px;
+
+    padding: 24px 0;
+}
