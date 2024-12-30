@@ -146,6 +146,10 @@ li.logo {
     border-style: none;
     border-radius: 8px;
     padding: 32px 120px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .sign-up-text {
