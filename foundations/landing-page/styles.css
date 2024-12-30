@@ -140,3 +140,10 @@ li.logo {
     font-style: normal;
     text-align: right;
 }
+
+.sign-up-box {
+    background-color: #3882f6;
+    border-style: none;
+    border-radius: 8px;
+    padding: 32px 120px;
+}
