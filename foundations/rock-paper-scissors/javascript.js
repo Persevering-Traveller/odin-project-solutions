@@ -81,4 +81,14 @@ function playRound(humanChoice, computerChoice) {
         
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+function playGame() {
+    for(let i = 0; i < 5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+    }
+
+    if(humanScore > computerScore) console.log("You win the game! Congratulations!");
+    else if(humanScore < computerScore) console.log("The computer wins this game! Refresh to try again!");
+    else console.log("A tie game between you and the computer! Refresh to do a tie breaker!!");
+}
+
+playGame();
