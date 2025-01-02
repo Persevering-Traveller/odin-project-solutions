@@ -27,5 +27,58 @@ function getHumanChoice() {
     return choice;
 }
 
-getComputerChoice();
-getHumanChoice();
+function playRound(humanChoice, computerChoice) {
+    if(!isNaN(humanChoice)) {
+        switch(humanChoice) {
+            case 1:
+                humanChoice = "Rock";
+                break;
+            case 2:
+                humanChoice = "Paper";
+                break;
+            case 3:
+                humanChoice = "Scissors";
+                break;
+        }
+    }
+
+    if(humanChoice.toLowerCase() == "rock") {
+        if(computerChoice.toLowerCase() == "rock") // Rock vs Rock
+            console.log(`A tie of ${computerChoice} and ${humanChoice}...`);
+        if(computerChoice.toLowerCase() == "paper") { // Rock vs Paper
+            console.log(`You lose! CPU: ${computerChoice} beats Your: ${humanChoice}.`);
+            computerScore++;
+        }
+        if(computerChoice.toLowerCase() == "scissors") { // Rock vs Scissors
+            console.log(`You win! Your: ${humanChoice} beats CPU: ${computerChoice}.`);
+            humanScore++;
+        }
+    }
+    else if (humanChoice.toLowerCase() == "paper") {
+        if(computerChoice.toLowerCase() == "rock") { // Paper vs Rock
+            console.log(`You win! Your: ${humanChoice} beats CPU: ${computerChoice}.`);
+            humanScore++;
+        }
+        if(computerChoice.toLowerCase() == "paper") // Paper vs Paper
+            console.log(`A tie of ${computerChoice} and ${humanChoice}...`);
+        if(computerChoice.toLowerCase() == "scissors") { // Paper vs Scissors
+            console.log(`You lose! CPU: ${computerChoice} beats Your: ${humanChoice}.`);
+            computerScore++;
+        }
+    }
+    else {
+        if(computerChoice.toLowerCase() == "rock") { // Scissors vs Rock
+            console.log(`You lose! CPU: ${computerChoice} beats Your: ${humanChoice}.`);
+            computerScore++;
+        }
+        if(computerChoice.toLowerCase() == "paper") { // Scissors vs Paper
+            console.log(`You win! Your: ${humanChoice} beats CPU: ${computerChoice}.`);
+            humanScore++;
+        }
+        if(computerChoice.toLowerCase() == "scissors") // Scissors vs Scissors
+            console.log(`A tie of ${computerChoice} and ${humanChoice}...`);
+    }
+        
+}
+
+playRound(getHumanChoice(), getComputerChoice());
