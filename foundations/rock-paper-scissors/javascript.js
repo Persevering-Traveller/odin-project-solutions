@@ -5,7 +5,6 @@ let computerScore = 0;
 
 function getComputerChoice() {
     let choice = Math.floor((Math.random() * 3) + 1);
-    //console.log(choice);
 
     switch(choice) {
         case 1: return "Rock";
@@ -23,7 +22,7 @@ function getHumanChoice() {
         if(!isNaN(choice) && choice > 0 && choice < 4) break;
         prompt("You need a choose a number between 1-3 or type the name of your choice!\nPress OK or Cancel.");
     }
-    console.log(choice);
+    
     return choice;
 }
 
