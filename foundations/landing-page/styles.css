@@ -77,7 +77,8 @@ button {
     flex: 1;
 }
 
-li.link, .subtext {
+a.link, .subtext {
+    text-decoration: none;
     font-size: 18px;
     color: #e5e7eb;
 }
