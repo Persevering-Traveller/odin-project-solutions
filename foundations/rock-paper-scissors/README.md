@@ -1,0 +1,2 @@
+# Project Details
+The point of [this project](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors) was to use Javascript create a Rock, Paper, Scissors game you can play in the browser console.
