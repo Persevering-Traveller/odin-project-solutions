@@ -1,4 +1,4 @@
-console.log("Hello Odin Project!");
+//console.log("Hello Odin Project!");
 
 let humanScore = 0;
 let computerScore = 0;
@@ -15,7 +15,6 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
     const resultsDiv = document.querySelector(".results");
-    console.log(resultsDiv);
     const gameResultsPara = document.createElement("p");
 
     if(!isNaN(humanChoice)) {
@@ -38,49 +37,40 @@ function playRound(humanChoice, computerChoice) {
 
     if(humanChoice.toLowerCase() == "rock") {
         if(computerChoice.toLowerCase() == "rock") { // Rock vs Rock
-            console.log(tieText);
             gameResultsPara.textContent = tieText;
         }
         if(computerChoice.toLowerCase() == "paper") { // Rock vs Paper
-            console.log(loseText);
             computerScore++;
             gameResultsPara.textContent = loseText;
         }
         if(computerChoice.toLowerCase() == "scissors") { // Rock vs Scissors
-            console.log(winText);
             humanScore++;
             gameResultsPara.textContent = winText;
         }
     }
     else if (humanChoice.toLowerCase() == "paper") {
         if(computerChoice.toLowerCase() == "rock") { // Paper vs Rock
-            console.log(winText);
             humanScore++;
             gameResultsPara.textContent = winText;
         }
         if(computerChoice.toLowerCase() == "paper") { // Paper vs Paper
-            console.log(tieText);
             gameResultsPara.textContent = tieText;
         }
         if(computerChoice.toLowerCase() == "scissors") { // Paper vs Scissors
-            console.log(loseText);
             computerScore++;
             gameResultsPara.textContent = loseText;
         }
     }
     else {
         if(computerChoice.toLowerCase() == "rock") { // Scissors vs Rock
-            console.log(loseText);
             computerScore++;
             gameResultsPara.textContent = loseText;
         }
         if(computerChoice.toLowerCase() == "paper") { // Scissors vs Paper
-            console.log(winText);
             humanScore++;
             gameResultsPara.textContent = winText;
         }
         if(computerChoice.toLowerCase() == "scissors") {// Scissors vs Scissors
-            console.log(tieText);
             gameResultsPara.textContent = tieText;
         }
     }
@@ -97,15 +87,12 @@ function announceGameWinner() {
     gameOverPara.style.color = "red";
 
     if(humanScore > computerScore) {
-        console.log("You win the game! Congratulations!");
         gameOverPara.textContent = "You win the game! Congratulations!";
     }
     else if(humanScore < computerScore) {
-        console.log("The computer wins this game! Refresh to try again!");
         gameOverPara.textContent = "The computer wins this game! Refresh to try again!";
     }
     else {
-        console.log("A tie game between you and the computer! Refresh to do a tie breaker!!");
         gameOverPara.textContent = "A tie game between you and the computer! Refresh to do a tie breaker!!";
     }
 
