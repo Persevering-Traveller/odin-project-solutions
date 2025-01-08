@@ -90,20 +90,20 @@ function playRound(humanChoice, computerChoice) {
 
 function announceGameWinner() {
     const resultsDiv = document.querySelector(".results");
-    const gameOverPara = document.createElement("h3");
-    gameOverPara.style.color = "red";
+    const gameOverHeader = document.createElement("h3");
+    gameOverHeader.style.color = "red";
 
     if(humanScore > computerScore) {
-        gameOverPara.textContent = "You win the game! Congratulations!";
+        gameOverHeader.textContent = "You win the game! Congratulations!";
     }
     else if(humanScore < computerScore) {
-        gameOverPara.textContent = "The computer wins this game! Refresh to try again!";
+        gameOverHeader.textContent = "The computer wins this game! Refresh to try again!";
     }
     else {
-        gameOverPara.textContent = "A tie game between you and the computer! Refresh to do a tie breaker!!";
+        gameOverHeader.textContent = "A tie game between you and the computer! Refresh to do a tie breaker!!";
     }
 
-    resultsDiv.appendChild(gameOverPara);
+    resultsDiv.appendChild(gameOverHeader);
 }
 
 // Need to create an arrow function that calls the playRound function or it will
