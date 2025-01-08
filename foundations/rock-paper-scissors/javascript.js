@@ -16,6 +16,10 @@ function getComputerChoice() {
 function playRound(humanChoice, computerChoice) {
     const resultsDiv = document.querySelector(".results");
     const gameResultsPara = document.createElement("p");
+    const playerScore = document.querySelector(".player");
+    const cpuScore = document.querySelector(".cpu");
+    let oldPlayerScore = humanScore;
+    let oldCPUScore = computerScore;
 
     if(!isNaN(humanChoice)) {
         switch(humanChoice) {
@@ -76,6 +80,9 @@ function playRound(humanChoice, computerChoice) {
     }
 
     resultsDiv.appendChild(gameResultsPara);
+
+    if(oldPlayerScore != humanScore) playerScore.innerText = humanScore;
+    if(oldCPUScore != computerScore) cpuScore.innerText = computerScore;
 
     if(humanScore >= 5 || computerScore >= 5)
         announceGameWinner();
