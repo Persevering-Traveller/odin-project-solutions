@@ -27,6 +27,10 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    const resultsDiv = document.querySelector(".results");
+    console.log(resultsDiv);
+    const gameResultsPara = document.createElement("p");
+
     if(!isNaN(humanChoice)) {
         switch(humanChoice) {
             case 1:
@@ -41,53 +45,70 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 
+    const winText = `You win! Your: ${humanChoice} beats CPU: ${computerChoice}.`;
+    const loseText = `You lose! CPU: ${computerChoice} beats Your: ${humanChoice}.`;
+    const tieText = `A tie of ${computerChoice} and ${humanChoice}...`;
+
     if(humanChoice.toLowerCase() == "rock") {
-        if(computerChoice.toLowerCase() == "rock") // Rock vs Rock
-            console.log(`A tie of ${computerChoice} and ${humanChoice}...`);
+        if(computerChoice.toLowerCase() == "rock") { // Rock vs Rock
+            console.log(tieText);
+            gameResultsPara.textContent = tieText;
+        }
         if(computerChoice.toLowerCase() == "paper") { // Rock vs Paper
-            console.log(`You lose! CPU: ${computerChoice} beats Your: ${humanChoice}.`);
+            console.log(loseText);
             computerScore++;
+            gameResultsPara.textContent = loseText;
         }
         if(computerChoice.toLowerCase() == "scissors") { // Rock vs Scissors
-            console.log(`You win! Your: ${humanChoice} beats CPU: ${computerChoice}.`);
+            console.log(winText);
             humanScore++;
+            gameResultsPara.textContent = winText;
         }
     }
     else if (humanChoice.toLowerCase() == "paper") {
         if(computerChoice.toLowerCase() == "rock") { // Paper vs Rock
-            console.log(`You win! Your: ${humanChoice} beats CPU: ${computerChoice}.`);
+            console.log(winText);
             humanScore++;
+            gameResultsPara.textContent = winText;
         }
-        if(computerChoice.toLowerCase() == "paper") // Paper vs Paper
-            console.log(`A tie of ${computerChoice} and ${humanChoice}...`);
+        if(computerChoice.toLowerCase() == "paper") { // Paper vs Paper
+            console.log(tieText);
+            gameResultsPara.textContent = tieText;
+        }
         if(computerChoice.toLowerCase() == "scissors") { // Paper vs Scissors
-            console.log(`You lose! CPU: ${computerChoice} beats Your: ${humanChoice}.`);
+            console.log(loseText);
             computerScore++;
+            gameResultsPara.textContent = loseText;
         }
     }
     else {
         if(computerChoice.toLowerCase() == "rock") { // Scissors vs Rock
-            console.log(`You lose! CPU: ${computerChoice} beats Your: ${humanChoice}.`);
+            console.log(loseText);
             computerScore++;
+            gameResultsPara.textContent = loseText;
         }
         if(computerChoice.toLowerCase() == "paper") { // Scissors vs Paper
-            console.log(`You win! Your: ${humanChoice} beats CPU: ${computerChoice}.`);
+            console.log(winText);
             humanScore++;
+            gameResultsPara.textContent = winText;
         }
-        if(computerChoice.toLowerCase() == "scissors") // Scissors vs Scissors
-            console.log(`A tie of ${computerChoice} and ${humanChoice}...`);
-    }
-        
-}
-
-function playGame() {
-    for(let i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
+        if(computerChoice.toLowerCase() == "scissors") {// Scissors vs Scissors
+            console.log(tieText);
+            gameResultsPara.textContent = tieText;
+        }
     }
 
-    if(humanScore > computerScore) console.log("You win the game! Congratulations!");
-    else if(humanScore < computerScore) console.log("The computer wins this game! Refresh to try again!");
-    else console.log("A tie game between you and the computer! Refresh to do a tie breaker!!");
+    resultsDiv.appendChild(gameResultsPara);
 }
 
-playGame();
+// Need to create an arrow function that calls the playRound function or it will
+// run the function as it adds an event listener
+document.querySelector("#rock").addEventListener("click", () => {
+    playRound("Rock", getComputerChoice());
+});
+document.querySelector("#paper").addEventListener("click", () => {
+    playRound("Paper", getComputerChoice());
+});
+document.querySelector("#scissors").addEventListener("click", () => {
+    playRound("Scissors", getComputerChoice());
+});
