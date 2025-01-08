@@ -99,6 +99,9 @@ function playRound(humanChoice, computerChoice) {
     }
 
     resultsDiv.appendChild(gameResultsPara);
+
+    if(humanScore >= 5 || computerScore >= 5)
+        announceGameWinner();
 }
 
 function announceGameWinner() {
