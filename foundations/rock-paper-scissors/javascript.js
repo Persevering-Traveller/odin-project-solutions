@@ -101,6 +101,27 @@ function playRound(humanChoice, computerChoice) {
     resultsDiv.appendChild(gameResultsPara);
 }
 
+function announceGameWinner() {
+    const resultsDiv = document.querySelector(".results");
+    const gameOverPara = document.createElement("h3");
+    gameOverPara.style.color = "red";
+
+    if(humanScore > computerScore) {
+        console.log("You win the game! Congratulations!");
+        gameOverPara.textContent = "You win the game! Congratulations!";
+    }
+    else if(humanScore < computerScore) {
+        console.log("The computer wins this game! Refresh to try again!");
+        gameOverPara.textContent = "The computer wins this game! Refresh to try again!";
+    }
+    else {
+        console.log("A tie game between you and the computer! Refresh to do a tie breaker!!");
+        gameOverPara.textContent = "A tie game between you and the computer! Refresh to do a tie breaker!!";
+    }
+
+    resultsDiv.appendChild(gameOverPara);
+}
+
 // Need to create an arrow function that calls the playRound function or it will
 // run the function as it adds an event listener
 document.querySelector("#rock").addEventListener("click", () => {
