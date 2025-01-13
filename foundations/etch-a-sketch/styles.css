@@ -1,8 +1,13 @@
+#change-button {
+    display: block;
+    margin: 32px auto;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
     width: 512px; /* 32px * 16 */
-    margin: 64px auto;
+    margin: 32px auto;
 }
 
 .square {
