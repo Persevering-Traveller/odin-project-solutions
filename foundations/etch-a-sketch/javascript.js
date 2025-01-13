@@ -26,3 +26,9 @@ function rebuildDrawingArea(newPixelSize) {
 }
 
 buildDrawingArea();
+
+const changeButton = document.querySelector("#change-button");
+changeButton.addEventListener("click", () => {
+    let pixelSize = prompt("What size would you like the pixels to be?\n(Please choose a number lower than 100)");
+    rebuildDrawingArea(pixelSize);
+});
