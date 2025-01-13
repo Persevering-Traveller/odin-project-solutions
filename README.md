@@ -6,3 +6,4 @@ bootcamp
 ## Foundations
 * Recipes
 * Landing Page
+* Rock, Paper, Scissors
