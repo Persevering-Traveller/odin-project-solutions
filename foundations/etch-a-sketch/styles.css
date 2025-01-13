@@ -12,3 +12,7 @@
     height: 32px;
     background-color: black; /* Debug color */
 }
+
+.square:hover {
+    background-color: grey; /* Debug color */
+}
