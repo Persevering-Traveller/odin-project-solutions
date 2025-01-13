@@ -1,11 +1,14 @@
 .container {
     display: flex;
     flex-wrap: wrap;
+    width: 512px; /* 32px * 16 */
+    margin: 64px auto;
 }
 
 .square {
     border: 0;
     margin: 0;
-    width: 1px;
-    height: 1px;
+    width: 32px;
+    height: 32px;
+    background-color: black; /* Debug color */
 }
