@@ -19,8 +19,8 @@ function rebuildDrawingArea(newPixelSize) {
     for(let i = 0; i < newPixelSize * newPixelSize; i++) {
         let square = document.createElement("div");
         square.setAttribute("class", "square");
-        square.setAttribute("width", `${newPixeSize}px`);
-        square.setAttribute("height", `${newPixeSize}px`);
+        square.setAttribute("width", `${newPixelSize}px`);
+        square.setAttribute("height", `${newPixelSize}px`);
         container.appendChild(square);
     }
 }
