@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     width: 512px; /* 32px * 16 */
     margin: 32px auto;
+    border: 1px solid black;
 }
 
 .square {
@@ -15,9 +16,9 @@
     margin: 0;
     width: 32px;
     height: 32px;
-    background-color: black; /* Debug color */
+    background-color: white;
 }
 
 .square:hover {
-    background-color: grey; /* Debug color */
+    background-color: black;
 }
