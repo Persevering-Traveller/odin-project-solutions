@@ -7,3 +7,4 @@ bootcamp
 * Recipes
 * Landing Page
 * Rock, Paper, Scissors
+* Etch-a-Sketch
