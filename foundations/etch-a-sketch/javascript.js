@@ -4,6 +4,9 @@ function buildDrawingArea() {
     for(let i = 0; i < 16*16; i++) {
         let square = document.createElement("div");
         square.setAttribute("class", "square");
+        square.addEventListener("mouseenter", () => {
+            square.style.backgroundColor = "black";
+        });
         container.appendChild(square);
     }
 }
@@ -24,6 +27,9 @@ function rebuildDrawingArea(newGridSize) {
         square.setAttribute("class", "square");
         square.style.width = `${newWidthAndHeight}px`;
         square.style.height = `${newWidthAndHeight}px`;
+        square.addEventListener("mouseenter", () => {
+            square.style.backgroundColor = "black";
+        });
         container.appendChild(square);
     }
 }
