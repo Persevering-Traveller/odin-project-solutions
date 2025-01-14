@@ -16,11 +16,14 @@ function rebuildDrawingArea(newPixelSize) {
     container = document.createElement("div");
     container.setAttribute("class", "container");
     body.appendChild(container);
+    // The pain I had to go through to find this property............
+    const containerWidth = container.clientWidth;
+    const newWidthAndHeight = Math.floor(containerWidth / newPixelSize);
     for(let i = 0; i < newPixelSize * newPixelSize; i++) {
         let square = document.createElement("div");
         square.setAttribute("class", "square");
-        square.setAttribute("width", `${newPixelSize}px`);
-        square.setAttribute("height", `${newPixelSize}px`);
+        square.style.width = `${newWidthAndHeight}px`;
+        square.style.height = `${newWidthAndHeight}px`;
         container.appendChild(square);
     }
 }
