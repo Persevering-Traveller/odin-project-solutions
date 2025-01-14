@@ -1,13 +1,20 @@
+function buildSquare(widthAndHeight = 32) {
+    let square = document.createElement("div");
+    square.setAttribute("class", "square");
+    square.style.width = `${widthAndHeight}px`;
+    square.style.height = `${widthAndHeight}px`;
+    square.addEventListener("mouseenter", () => {
+        square.style.backgroundColor = "black";
+        square.style.opacity = `${+square.style.opacity + .1}`
+    });
+    return square;
+}
+
 function buildDrawingArea() {
     // Build a 16x16 grid of square divs
     const container = document.querySelector(".container");
     for(let i = 0; i < 16*16; i++) {
-        let square = document.createElement("div");
-        square.setAttribute("class", "square");
-        square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black";
-            square.style.opacity = `${+square.style.opacity + .1}`
-        });
+        let square = buildSquare();
         container.appendChild(square);
     }
 }
@@ -24,14 +31,7 @@ function rebuildDrawingArea(newGridSize) {
     const containerWidth = container.clientWidth;
     const newWidthAndHeight = Math.floor(containerWidth / newGridSize);
     for(let i = 0; i < newGridSize * newGridSize; i++) {
-        let square = document.createElement("div");
-        square.setAttribute("class", "square");
-        square.style.width = `${newWidthAndHeight}px`;
-        square.style.height = `${newWidthAndHeight}px`;
-        square.addEventListener("mouseenter", () => {
-            square.style.backgroundColor = "black";
-            square.style.opacity = `${+square.style.opacity + .1}`
-        });
+        let square = buildSquare(newWidthAndHeight);
         container.appendChild(square);
     }
 }
