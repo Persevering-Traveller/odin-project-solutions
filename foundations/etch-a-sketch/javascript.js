@@ -34,5 +34,7 @@ const changeButton = document.querySelector("#change-button");
 changeButton.addEventListener("click", () => {
     let gridSize = prompt("What grid size would you like the drawing area to be?\
         \n(example answer: 10 -> 10x10 grid)\n(Please choose a number lower than 100)");
+    if (gridSize > 100) gridSize = 100;
+    if (gridSize == null) gridSize = 16;
     rebuildDrawingArea(gridSize);
 });
