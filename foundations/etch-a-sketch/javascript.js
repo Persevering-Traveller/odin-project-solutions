@@ -8,7 +8,7 @@ function buildDrawingArea() {
     }
 }
 
-function rebuildDrawingArea(newPixelSize) {
+function rebuildDrawingArea(newGridSize) {
     const body = document.querySelector("body");
     let container = document.querySelector(".container");
     body.removeChild(container);
@@ -18,8 +18,8 @@ function rebuildDrawingArea(newPixelSize) {
     body.appendChild(container);
     // The pain I had to go through to find this property............
     const containerWidth = container.clientWidth;
-    const newWidthAndHeight = Math.floor(containerWidth / newPixelSize);
-    for(let i = 0; i < newPixelSize * newPixelSize; i++) {
+    const newWidthAndHeight = Math.floor(containerWidth / newGridSize);
+    for(let i = 0; i < newGridSize * newGridSize; i++) {
         let square = document.createElement("div");
         square.setAttribute("class", "square");
         square.style.width = `${newWidthAndHeight}px`;
@@ -32,6 +32,7 @@ buildDrawingArea();
 
 const changeButton = document.querySelector("#change-button");
 changeButton.addEventListener("click", () => {
-    let pixelSize = prompt("What size would you like the pixels to be?\n(Please choose a number lower than 100)");
-    rebuildDrawingArea(pixelSize);
+    let gridSize = prompt("What grid size would you like the drawing area to be?\
+        \n(example answer: 10 -> 10x10 grid)\n(Please choose a number lower than 100)");
+    rebuildDrawingArea(gridSize);
 });
