@@ -6,6 +6,7 @@ function buildDrawingArea() {
         square.setAttribute("class", "square");
         square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = "black";
+            square.style.opacity = `${+square.style.opacity + .1}`
         });
         container.appendChild(square);
     }
@@ -29,6 +30,7 @@ function rebuildDrawingArea(newGridSize) {
         square.style.height = `${newWidthAndHeight}px`;
         square.addEventListener("mouseenter", () => {
             square.style.backgroundColor = "black";
+            square.style.opacity = `${+square.style.opacity + .1}`
         });
         container.appendChild(square);
     }
