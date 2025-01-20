@@ -7,7 +7,7 @@ body {
     margin: 0 auto;
 }
 
-p, h1, h2, li {
+p, h1, h2, li, div.img-credits {
     color: #fff;
 }
 
@@ -17,8 +17,16 @@ h1, h2 {
     padding: 8px;
 }
 
-p, li, a {
+p, li, a, div.img-credits {
     font-family:Arial, Helvetica, sans-serif;
+}
+
+div.img-credits {
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 12px;
 }
 
 a:link {
@@ -33,15 +41,15 @@ img {
     height: auto;
 }
 
-img.chopped-cheese {
+.chopped-cheese {
     width: 50%;
 }
 
-img.catfish {
+.catfish {
     width: 25%;
 }
 
-img.enchiladas {
+.enchiladas {
     width:20%;
 }
 
@@ -57,6 +65,11 @@ img.enchiladas {
 
     h1, h2 {
         text-align: center;
+    }
+
+    div.img-credits {
+        margin: 0 auto;
+        width: 100%;
     }
 }
 
