@@ -22,7 +22,8 @@ button {
 }
 
 .upper-section {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .screen {
@@ -33,18 +34,22 @@ button {
 }
 
 .upper-buttons-container {
-
+    display: flex;
+    justify-content: right;
 }
 
 .lower-section {
-
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .numbers-container {
-
+    
 }
 
 .operations-container {
-
+    
 }
 
