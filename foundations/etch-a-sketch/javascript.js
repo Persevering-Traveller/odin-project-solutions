@@ -1,4 +1,4 @@
-function buildSquare(widthAndHeight = 32) {
+function buildSquare(widthAndHeight) {
     let square = document.createElement("div");
     square.setAttribute("class", "square");
     square.style.width = `${widthAndHeight}px`;
@@ -13,8 +13,10 @@ function buildSquare(widthAndHeight = 32) {
 function buildDrawingArea() {
     // Build a 16x16 grid of square divs
     const container = document.querySelector(".container");
+    const containerWidth = container.clientWidth; // Javascript apparently can't do 'document.querySelector(".container").clientWidth'....
+    const squareWidthAndHeight = Math.floor(containerWidth / 16)
     for(let i = 0; i < 16*16; i++) {
-        let square = buildSquare();
+        let square = buildSquare(squareWidthAndHeight);
         container.appendChild(square);
     }
 }
