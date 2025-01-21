@@ -26,6 +26,15 @@ let operationString = " ";
 const calculatorScreen = document.querySelector(".screen");
 
 // Add onclick button listeners
+const clearButton = document.querySelector("#clear");
+clearButton.addEventListener("click", () => {
+    numberBank1 = 0;
+    numberBank2 = 0;
+    operation = NO_OP;
+    operationString = " ";
+    calculatorScreen.textContent = "";
+});
+
 // Number buttons
 const buttonCollection = document.querySelectorAll(".number");
 buttonCollection.forEach((button, i) => {
