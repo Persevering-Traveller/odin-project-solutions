@@ -52,8 +52,8 @@ backspaceButton.addEventListener("click", () => {
 })
 
 // Number buttons
-const buttonCollection = document.querySelectorAll(".number");
-buttonCollection.forEach((button, i) => {
+const numberButtonCollection = document.querySelectorAll(".number");
+numberButtonCollection.forEach((button, i) => {
     button.addEventListener("click", () => {
         if(i === 9) return;
         if(operation === NO_OP){ 
@@ -68,7 +68,7 @@ buttonCollection.forEach((button, i) => {
 });
 
 // since the zero button is the last in the collection and operates differently, directly set it
-buttonCollection[buttonCollection.length - 1].addEventListener("click", () => {
+numberButtonCollection[numberButtonCollection.length - 1].addEventListener("click", () => {
     if(operation === -1) {
         numberBank1 *= 10;
         calculatorScreen.textContent = numberBank1;
