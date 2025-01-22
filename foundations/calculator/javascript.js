@@ -25,6 +25,8 @@ let operationString = " ";
 
 const calculatorScreen = document.querySelector(".screen");
 
+
+
 // Add onclick button listeners
 const clearButton = document.querySelector("#clear");
 clearButton.addEventListener("click", () => {
@@ -111,4 +113,21 @@ divideOperation.addEventListener("click", () => {
     operation = OP_DIV;
     operationString = "/";
     calculatorScreen.textContent += operationString;
+})
+
+const equalsButton = document.querySelector("#equals");
+equalsButton.addEventListener("click", () =>  {
+    if(numberBank2 === 0) return;
+    switch(operation) {
+        case OP_ADD: numberBank1 = numberBank1 + numberBank2; break;
+        case OP_SUB: numberBank1 = numberBank1 - numberBank2; break;
+        case OP_MUL: numberBank1 = numberBank1 * numberBank2; break;
+        case OP_DIV: numberBank1 = numberBank1 / numberBank2; break;
+        default: return;
+    }
+
+    numberBank2 = 0;
+    operation = NO_OP;
+    operationString = " ";
+    calculatorScreen.textContent = numberBank1;
 })
