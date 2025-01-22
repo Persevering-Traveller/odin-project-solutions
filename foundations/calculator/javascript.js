@@ -9,10 +9,10 @@ let numberBank1 = 0;
 let numberBank2 = 0;
 let operation = -1;
 let operationString = " ";
+let dotMode = false;
+let dotMultiple = 0.1;
 
 const calculatorScreen = document.querySelector(".screen");
-
-
 
 // Add onclick button listeners
 const clearButton = document.querySelector("#clear");
@@ -21,6 +21,7 @@ clearButton.addEventListener("click", () => {
     numberBank2 = 0;
     operation = NO_OP;
     operationString = " ";
+    turnOffDotMode();
     calculatorScreen.textContent = "";
 });
 
@@ -40,17 +41,36 @@ backspaceButton.addEventListener("click", () => {
     calculatorScreen.textContent = calculatorScreen.textContent.slice(0, calculatorScreen.innerHTML.length - 1);
 })
 
+const dotButton = document.querySelector("#dot");
+dotButton.addEventListener("click", () => {
+    dotMode = true;
+    if(numberBank1 === 0 || numberBank1 !== 0 && numberBank2 === 0)
+        calculatorScreen.textContent += "0."
+    else
+        calculatorScreen.textContent += ".";
+});
+
 // Number buttons
 const numberButtonCollection = document.querySelectorAll(".number");
 numberButtonCollection.forEach((button, i) => {
     button.addEventListener("click", () => {
         if(i === 9) return;
         if(operation === NO_OP){ 
-            numberBank1 = (numberBank1 * 10) + (i + 1);
+            if(dotMode) {
+                numberBank1 = numberBank1 + ((i + 1) * dotMultiple);
+                dotMultiple /= 10;
+            }
+            else
+                numberBank1 = (numberBank1 * 10) + (i + 1);
             calculatorScreen.textContent = numberBank1;
          }
         else {
-            numberBank2 = (numberBank2 * 10) + (i + 1);
+            if(dotMode) {
+                numberBank2 = numberBank2 + ((i + 1) * dotMultiple);
+                dotMultiple /= 10;
+            }
+            else
+                numberBank2 = (numberBank2 * 10) + (i + 1);
             calculatorScreen.textContent = numberBank1 + operationString + numberBank2;
         }
     });
@@ -59,21 +79,37 @@ numberButtonCollection.forEach((button, i) => {
 // since the zero button is the last in the collection and operates differently, directly set it
 numberButtonCollection[numberButtonCollection.length - 1].addEventListener("click", () => {
     if(operation === -1) {
-        numberBank1 *= 10;
+        if(dotMode) {
+            numberBank1 *= 1.0;
+            dotMultiple /= 10;
+        }
+        else
+            numberBank1 *= 10;
         calculatorScreen.textContent = numberBank1;
     }
     else {
-        numberBank2 *= 10;
+        if(dotMode) {
+            numberBank2 *= 1.0;
+            dotMultiple /= 10;
+        }
+        else
+            numberBank2 *= 10;
         calculatorScreen.textContent = numberBank1 + operationString + numberBank2;
     }
         
 });
+
+function turnOffDotMode() {
+    dotMode = false;
+    dotMultiple = 0.1;
+}
 
 const addOperation = document.querySelector("#add");
 addOperation.addEventListener("click", () => {
     if(operation !== NO_OP || numberBank1 === 0) return;
     operation = OP_ADD;
     operationString = "+";
+    turnOffDotMode();
     calculatorScreen.textContent += operationString;
 });
 
@@ -83,6 +119,7 @@ subtractOperation.addEventListener("click", () => {
     if(operation !== NO_OP || numberBank1 === 0) return;
     operation = OP_SUB;
     operationString = "-";
+    turnOffDotMode();
     calculatorScreen.textContent += operationString;
 });
 
@@ -91,6 +128,7 @@ multiplyOperation.addEventListener("click", () => {
     if(operation !== NO_OP || numberBank1 === 0) return;
     operation = OP_MUL;
     operationString = "*";
+    turnOffDotMode();
     calculatorScreen.textContent += operationString;
 })
 
@@ -99,6 +137,7 @@ divideOperation.addEventListener("click", () => {
     if(operation !== NO_OP || numberBank1 === 0) return;
     operation = OP_DIV;
     operationString = "/";
+    turnOffDotMode();
     calculatorScreen.textContent += operationString;
 })
 
@@ -116,5 +155,6 @@ equalsButton.addEventListener("click", () =>  {
     numberBank2 = 0;
     operation = NO_OP;
     operationString = " ";
+    turnOffDotMode();
     calculatorScreen.textContent = numberBank1;
 })
