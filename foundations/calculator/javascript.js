@@ -1,16 +1,3 @@
-/* Functions to create:
-Math operations:
-* Add
-* Subtract
-* Multiply
-* Divide
-
-Operate - Will begin the actual math operation
-addToScreen - Will add whatever numeral or dot(.) the user enters
-clearScreen - Will also clear any variables
-removeLastEntry - Will remove whatever numeral or dot(.) the user enters
-*/
-
 // Javascript has no enums and that's a shame...
 const NO_OP = -1
 const OP_ADD = 0;
