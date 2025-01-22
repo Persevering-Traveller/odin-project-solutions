@@ -104,3 +104,11 @@ multiplyOperation.addEventListener("click", () => {
     operationString = "*";
     calculatorScreen.textContent += operationString;
 })
+
+const divideOperation = document.querySelector("#divide");
+divideOperation.addEventListener("click", () => {
+    if(operation !== NO_OP || numberBank1 === 0) return;
+    operation = OP_DIV;
+    operationString = "/";
+    calculatorScreen.textContent += operationString;
+})
