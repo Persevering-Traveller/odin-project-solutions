@@ -93,5 +93,11 @@ subtractOperation.addEventListener("click", () => {
     operation = OP_SUB;
     operationString = "-";
     calculatorScreen.textContent += operationString;
-    console.log("I ran");
 });
+
+const multiplyOperation = document.querySelector("#multiply");
+multiplyOperation.addEventListener("click", () => {
+    operation = OP_MUL;
+    operationString = "*";
+    calculatorScreen.textContent += operationString;
+})
