@@ -82,6 +82,7 @@ numberButtonCollection[numberButtonCollection.length - 1].addEventListener("clic
 
 const addOperation = document.querySelector("#add");
 addOperation.addEventListener("click", () => {
+    if(operation !== NO_OP || numberBank1 === 0) return;
     operation = OP_ADD;
     operationString = "+";
     calculatorScreen.textContent += operationString;
@@ -90,6 +91,7 @@ addOperation.addEventListener("click", () => {
 const subtractOperation = document.querySelector("#subtract");
 console.log(subtractOperation);
 subtractOperation.addEventListener("click", () => {
+    if(operation !== NO_OP || numberBank1 === 0) return;
     operation = OP_SUB;
     operationString = "-";
     calculatorScreen.textContent += operationString;
@@ -97,6 +99,7 @@ subtractOperation.addEventListener("click", () => {
 
 const multiplyOperation = document.querySelector("#multiply");
 multiplyOperation.addEventListener("click", () => {
+    if(operation !== NO_OP || numberBank1 === 0) return;
     operation = OP_MUL;
     operationString = "*";
     calculatorScreen.textContent += operationString;
