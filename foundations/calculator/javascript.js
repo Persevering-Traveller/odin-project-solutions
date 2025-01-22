@@ -35,6 +35,22 @@ clearButton.addEventListener("click", () => {
     calculatorScreen.textContent = "";
 });
 
+const backspaceButton = document.querySelector("#backspace");
+backspaceButton.addEventListener("click", () => {
+    if(operation === NO_OP) {
+        numberBank1 = Math.floor(numberBank1 / 10);
+    }
+    else if(operation !== NO_OP && numberBank2 === 0) {
+        operation = NO_OP;
+        operationString = " ";
+    }
+    else {
+        numberBank2 = Math.floor(numberBank2 / 10);
+    }
+
+    calculatorScreen.textContent = calculatorScreen.textContent.slice(0, calculatorScreen.innerHTML.length - 1);
+})
+
 // Number buttons
 const buttonCollection = document.querySelectorAll(".number");
 buttonCollection.forEach((button, i) => {
