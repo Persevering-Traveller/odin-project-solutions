@@ -79,3 +79,10 @@ numberButtonCollection[numberButtonCollection.length - 1].addEventListener("clic
     }
         
 });
+
+const addOperation = document.querySelector("#add");
+addOperation.addEventListener("click", () => {
+    operation = OP_ADD;
+    operationString = "+";
+    calculatorScreen.textContent += operationString;
+});
