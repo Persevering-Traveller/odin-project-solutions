@@ -25,17 +25,39 @@ clearButton.addEventListener("click", () => {
     calculatorScreen.textContent = "";
 });
 
+function shaveOffOneFloatingPointDigit(numBank) {
+    if(Math.floor(numBank) === numBank) {
+        dotMode = false;
+        return numBank;
+    }
+    dotMultiple *= 10;
+    let i = dotMultiple;
+    let place = 1;
+    while(i != 1) {
+        i *= 10
+        place *= 10;
+    }
+    return Math.floor(numBank) + Math.floor(Math.round((numBank % 1) * place) / 10) * dotMultiple;
+}
+
 const backspaceButton = document.querySelector("#backspace");
 backspaceButton.addEventListener("click", () => {
     if(operation === NO_OP) {
-        numberBank1 = Math.floor(numberBank1 / 10);
+        if(dotMode) {
+            numberBank1 = shaveOffOneFloatingPointDigit(numberBank1);
+        }
+        else
+            numberBank1 = Math.floor(numberBank1 / 10);
     }
     else if(operation !== NO_OP && numberBank2 === 0) {
         operation = NO_OP;
         operationString = " ";
     }
     else {
-        numberBank2 = Math.floor(numberBank2 / 10);
+        if(dotMode)
+            numberBank2 = shaveOffOneFloatingPointDigit(numberBank2);
+        else
+            numberBank2 = Math.floor(numberBank2 / 10);
     }
 
     calculatorScreen.textContent = calculatorScreen.textContent.slice(0, calculatorScreen.innerHTML.length - 1);
@@ -44,7 +66,7 @@ backspaceButton.addEventListener("click", () => {
 const dotButton = document.querySelector("#dot");
 dotButton.addEventListener("click", () => {
     dotMode = true;
-    if(numberBank1 === 0 || numberBank1 !== 0 && numberBank2 === 0)
+    if(numberBank1 === 0 && (numberBank1 !== 0 && numberBank2 === 0))
         calculatorScreen.textContent += "0."
     else
         calculatorScreen.textContent += ".";
