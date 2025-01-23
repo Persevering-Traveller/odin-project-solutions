@@ -65,6 +65,7 @@ backspaceButton.addEventListener("click", () => {
 
 const dotButton = document.querySelector("#dot");
 dotButton.addEventListener("click", () => {
+    if(dotMode) return;
     dotMode = true;
     if(numberBank1 === 0 && (numberBank1 !== 0 && numberBank2 === 0))
         calculatorScreen.textContent += "0."
