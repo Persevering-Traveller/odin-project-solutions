@@ -5,12 +5,15 @@ const OP_SUB = 1;
 const OP_MUL = 2;
 const OP_DIV = 3;
 
+const MAX_FLOATING_POINT = 5;
+
 let numberBank1 = 0;
 let numberBank2 = 0;
 let operation = -1;
 let operationString = " ";
 let dotMode = false;
 let dotMultiple = 0.1;
+let dotPlace = 1;
 
 const calculatorScreen = document.querySelector(".screen");
 
@@ -27,17 +30,26 @@ clearButton.addEventListener("click", () => {
 
 function shaveOffOneFloatingPointDigit(numBank) {
     if(Math.floor(numBank) === numBank) {
-        dotMode = false;
+        turnOffDotMode();
         return numBank;
     }
+    dotPlace--;
     dotMultiple *= 10;
-    let i = dotMultiple;
-    let place = 1;
-    while(i != 1) {
-        i *= 10
-        place *= 10;
-    }
-    return Math.floor(numBank) + Math.floor(Math.round((numBank % 1) * place) / 10) * dotMultiple;
+    // TODO there's still a bug in this math though
+    // It's kind of a waste of variables, but it makes the math make sense!!
+    let onlyFloatingPoint = numBank % 1;
+    let floatingPointToWholeNumber = onlyFloatingPoint * (10**dotPlace);
+    let shaveOffOneDigit = Math.floor(floatingPointToWholeNumber / 10);
+    let turnBackIntoFloatingPoint = shaveOffOneDigit * dotMultiple;
+    return Math.floor(numBank) + turnBackIntoFloatingPoint;
+}
+
+// Wow, so Javascript apparently has really bad floating point math precision,
+// like REALLY REALLY REALLY bad. So this is absolutely necessary or else 2.3 + 0.03
+// might equal 2.329999999999992 or something silly like that.
+function getPreciseFloatingPoint(numBank, number) {
+    let newNumber = (numBank + (number * dotMultiple)).toFixed(dotPlace);
+    return Number(newNumber);
 }
 
 const backspaceButton = document.querySelector("#backspace");
@@ -80,8 +92,11 @@ numberButtonCollection.forEach((button, i) => {
         if(i === 9) return;
         if(operation === NO_OP){ 
             if(dotMode) {
-                numberBank1 = numberBank1 + ((i + 1) * dotMultiple);
-                dotMultiple /= 10;
+                if(dotPlace <= MAX_FLOATING_POINT) {
+                    numberBank1 = getPreciseFloatingPoint(numberBank1, i+1);
+                    dotMultiple /= 10;
+                    dotPlace++;
+                }
             }
             else
                 numberBank1 = (numberBank1 * 10) + (i + 1);
@@ -89,8 +104,11 @@ numberButtonCollection.forEach((button, i) => {
          }
         else {
             if(dotMode) {
-                numberBank2 = numberBank2 + ((i + 1) * dotMultiple);
-                dotMultiple /= 10;
+                if(dotPlace <= MAX_FLOATING_POINT) {
+                    numberBank2 = getPreciseFloatingPoint(numberBank2, i + 1);
+                    dotMultiple /= 10;
+                    dotPlace++;
+                }
             }
             else
                 numberBank2 = (numberBank2 * 10) + (i + 1);
@@ -125,6 +143,7 @@ numberButtonCollection[numberButtonCollection.length - 1].addEventListener("clic
 function turnOffDotMode() {
     dotMode = false;
     dotMultiple = 0.1;
+    dotPlace = 1;
 }
 
 const addOperation = document.querySelector("#add");
