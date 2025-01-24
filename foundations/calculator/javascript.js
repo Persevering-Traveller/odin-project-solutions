@@ -35,12 +35,11 @@ function shaveOffOneFloatingPointDigit(numBank) {
     }
     dotPlace--;
     dotMultiple *= 10;
-    // TODO there's still a bug in this math though
     // It's kind of a waste of variables, but it makes the math make sense!!
     let onlyFloatingPoint = numBank % 1;
     let floatingPointToWholeNumber = onlyFloatingPoint * (10**dotPlace);
     let shaveOffOneDigit = Math.floor(floatingPointToWholeNumber / 10);
-    let turnBackIntoFloatingPoint = shaveOffOneDigit * dotMultiple;
+    let turnBackIntoFloatingPoint = shaveOffOneDigit * (dotMultiple * 10); // Make dot multiple one place less for proper number
     return Math.floor(numBank) + turnBackIntoFloatingPoint;
 }
 
