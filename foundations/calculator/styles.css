@@ -16,6 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
 button {
@@ -27,7 +28,7 @@ button {
     color: #FFF;
     font-size: 24px;
     font-weight: 500;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
 }
 
@@ -35,7 +36,8 @@ button {
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    width: 80%;
+    gap: 10px;
+    width: 300px;
 }
 
 .screen {
@@ -62,13 +64,15 @@ button {
 .numbers-container {
     display: flex;
     width: 220px;
-    align-content: space-between;
     flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px 11px;
 }
 
 .operations-container {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .upper-buttons-container>button, .operations-container>button {
