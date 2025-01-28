@@ -184,7 +184,10 @@ divideOperation.addEventListener("click", () => {
 
 const equalsButton = document.querySelector("#equals");
 equalsButton.addEventListener("click", () =>  {
-    if(numberBank2 === 0) return;
+    if(numberBank2 === 0 && operation === OP_DIV) {
+        calculatorScreen.textContent = "Oh no x_X!";
+        return;
+    }
     switch(operation) {
         case OP_ADD: numberBank1 = numberBank1 + numberBank2; break;
         case OP_SUB: numberBank1 = numberBank1 - numberBank2; break;
