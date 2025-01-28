@@ -8,3 +8,4 @@ bootcamp
 * Landing Page
 * Rock, Paper, Scissors
 * Etch-a-Sketch
+* Calculator
