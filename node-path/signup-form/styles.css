@@ -1,3 +1,20 @@
 body {
     background-color: #EEE;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-img {
+    background-image: url("./halie-west-25xggax4bSA-unsplash.jpg");
+    background-size: 100% 100vh;
+    display: flex;
+    width: 66vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.form-area {
+    background-color: #FFF;
 }
