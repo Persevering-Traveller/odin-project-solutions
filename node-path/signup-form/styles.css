@@ -35,3 +35,13 @@ body {
     box-shadow: 0 8px 8px #CCC;
     padding: 16px 32px;
 }
+
+.submit-btn {
+    background-color: #596D48;
+    border-style: none;
+    border-radius: 8px;
+    color: #FFF;
+    width: 180px;
+    margin-top: 24px;
+    padding: 8px 16px;
+}
