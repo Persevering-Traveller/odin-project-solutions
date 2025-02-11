@@ -19,6 +19,10 @@ body {
     margin-left: 32px;
 }
 
+.signup-text {
+    margin-bottom: 48px;
+}
+
 .signup-area {
     display: flex;
     flex-direction: column;
