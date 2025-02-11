@@ -15,6 +15,10 @@ body {
     padding: 0;
 }
 
+.signup-text, .submit-btn, .login-text {
+    margin-left: 32px;
+}
+
 .signup-area {
     display: flex;
     flex-direction: column;
