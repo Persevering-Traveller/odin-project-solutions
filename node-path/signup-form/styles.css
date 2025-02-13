@@ -27,6 +27,11 @@ figcaption, figcaption a {
     margin-bottom: 48px;
 }
 
+.emphasis-signup-text {
+    display: block;
+    margin-top: 16px;
+}
+
 .signup-area {
     display: flex;
     flex-direction: column;
