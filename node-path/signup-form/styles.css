@@ -6,10 +6,9 @@ body {
 }
 
 .sidebar-img {
-    background-image: url("./halie-west-25xggax4bSA-unsplash.jpg");
-    background-size: 100% 100vh;
+    background: no-repeat center/100% url("./halie-west-25xggax4bSA-unsplash.jpg");
     display: flex;
-    width: 66vw;
+    width: 60vw;
     height: 100vh;
     margin: 0;
     padding: 0;
