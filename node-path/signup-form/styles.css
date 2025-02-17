@@ -112,6 +112,10 @@ figcaption {
     box-shadow: 2px 2px 4px #BBB;
 }
 
+input#password:invalid, input#confirm-password:invalid {
+    border: 1px solid red;
+}
+
 .submit-btn {
     background-color: #596D48;
     border-style: none;
