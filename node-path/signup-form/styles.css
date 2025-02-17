@@ -21,11 +21,16 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 128px;
+    margin-top: 160px;
 }
 
 figcaption, figcaption a {
     font-size:x-small;
     color: #FFF;
+}
+
+figcaption {
+    margin-bottom: 16px;
 }
 
 .signup-text, .submit-btn, .login-text {
