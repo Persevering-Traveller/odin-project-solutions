@@ -32,6 +32,11 @@ body {
     width: auto;
 }
 
+.logo-text {
+    color: #FFF;
+    font-size: 56px;
+}
+
 figcaption, figcaption a {
     font-size:x-small;
     color: #FFF;
