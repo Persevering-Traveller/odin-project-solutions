@@ -1,2 +1,2 @@
 # Project Details
-The purpose of [this project](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form) is to create a sign-up form focusing on HTML and CSS
+The purpose of [this project](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-sign-up-form) is to create a sign-up form focusing on HTML and CSS based on [this reference image.](https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png)
