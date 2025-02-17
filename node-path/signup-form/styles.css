@@ -111,6 +111,7 @@ figcaption {
     background-color: #596D48;
     border-style: none;
     border-radius: 8px;
+    box-shadow: 0 2px 8px #BBB;
     color: #FFF;
     width: 180px;
     margin-top: 24px;
