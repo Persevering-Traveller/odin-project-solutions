@@ -81,6 +81,10 @@ figcaption {
     padding: 16px 32px;
 }
 
+.form-header {
+    margin-bottom: 16px;
+}
+
 .input-fields {
     display: flex;
     flex-wrap: wrap;
