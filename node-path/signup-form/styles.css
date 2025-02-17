@@ -97,6 +97,12 @@ figcaption {
     flex-direction: column;
 }
 
+.field label {
+    font-size: x-small;
+    text-transform: uppercase;
+    letter-spacing: 0.075rem;
+}
+
 .submit-btn {
     background-color: #596D48;
     border-style: none;
