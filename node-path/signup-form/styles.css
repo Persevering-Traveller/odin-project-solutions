@@ -27,6 +27,11 @@ body {
     margin-top: 160px;
 }
 
+.logo-img {
+    height: 80%;
+    width: auto;
+}
+
 figcaption, figcaption a {
     font-size:x-small;
     color: #FFF;
