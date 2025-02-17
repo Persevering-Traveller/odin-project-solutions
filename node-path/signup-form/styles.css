@@ -95,3 +95,8 @@ figcaption {
 .login-text {
     margin-top: 28px;
 }
+
+.login-text a {
+    color: #596D48;
+    text-decoration: none;
+}
