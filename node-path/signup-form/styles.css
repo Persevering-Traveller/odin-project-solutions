@@ -1,3 +1,8 @@
+@font-face {
+    font-family: norse-bold;
+    src: url("./Norse-Bold.otf");
+}
+
 body {
     background-color: #FAFAFA;
     display: flex;
@@ -35,6 +40,7 @@ body {
 .logo-text {
     color: #FFF;
     font-size: 56px;
+    font-family: norse-bold, sans-serif;
 }
 
 figcaption, figcaption a {
