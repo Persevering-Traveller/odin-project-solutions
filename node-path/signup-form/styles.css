@@ -60,7 +60,6 @@ figcaption {
 .signup-text {
     margin-bottom: 48px;
     padding-right: 45%;
-    font-weight: 600;
 }
 
 .emphasis-signup-text {
@@ -72,6 +71,7 @@ figcaption {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-weight: 600;
 }
 
 .form-area {
@@ -89,6 +89,7 @@ figcaption {
     width: 180px;
     margin-top: 24px;
     padding: 8px 16px;
+    font-weight: 600;
 }
 
 .login-text {
