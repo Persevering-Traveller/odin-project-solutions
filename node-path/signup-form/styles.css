@@ -103,6 +103,10 @@ figcaption {
     letter-spacing: 0.075rem;
 }
 
+.field input {
+    width: 200px;
+}
+
 .submit-btn {
     background-color: #596D48;
     border-style: none;
