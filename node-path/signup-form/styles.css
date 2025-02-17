@@ -107,6 +107,11 @@ figcaption {
     width: 200px;
 }
 
+.field input:focus {
+    border: 1px solid lightblue;
+    box-shadow: 2px 2px 4px #BBB;
+}
+
 .submit-btn {
     background-color: #596D48;
     border-style: none;
