@@ -81,6 +81,18 @@ figcaption {
     padding: 16px 32px;
 }
 
+.input-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 64px;
+    padding-right: 45%;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
 .submit-btn {
     background-color: #596D48;
     border-style: none;
