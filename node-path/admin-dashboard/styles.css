@@ -8,6 +8,7 @@
 .sidebar {
     grid-column: 1 / 2;
     background-color: royalblue;
+    font-weight: 600;
     color: white;
     display: grid;
     grid-template-columns: 1fr;
