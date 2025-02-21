@@ -14,4 +14,6 @@
     grid-template-rows: 64px repeat(11, 32px);
 }
 
-
+.sidebar-title, .sidebar-item {
+    padding-left: 16px;
+}
