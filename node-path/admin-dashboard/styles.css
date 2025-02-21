@@ -1,7 +1,7 @@
 .container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-rows: 1fr 4fr;
     margin: 0;
 }
 
@@ -21,4 +21,10 @@
 
 .sidebar-title, .sidebar-item {
     padding-left: 16px;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 64px 128px;
 }
