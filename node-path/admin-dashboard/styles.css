@@ -44,3 +44,12 @@ body {
     grid-template-columns: 64px 75% 64px 64px 64px;
     grid-template-rows: 1fr;
 }
+
+.controlsbar > button {
+    background-color: royalblue;
+    color: white;
+    border-radius: 8px;
+    border-style: none;
+    width: 64px;
+    height: 32px;
+}
