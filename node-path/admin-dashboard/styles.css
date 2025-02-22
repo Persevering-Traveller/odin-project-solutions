@@ -38,3 +38,9 @@ body {
     grid-template-columns: 75% 32px 32px 1fr;
     grid-template-rows: 1fr;
 }
+
+.controlsbar {
+    display: grid;
+    grid-template-columns: 64px 75% 64px 64px 64px;
+    grid-template-rows: 1fr;
+}
