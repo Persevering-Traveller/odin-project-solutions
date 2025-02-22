@@ -28,3 +28,9 @@
     grid-template-columns: 1fr;
     grid-template-rows: 64px 128px;
 }
+
+.navbar {
+    display: grid;
+    grid-template-columns: 75% 32px 32px 1fr;
+    grid-template-rows: 1fr;
+}
