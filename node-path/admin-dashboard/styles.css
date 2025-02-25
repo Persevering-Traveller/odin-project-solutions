@@ -78,6 +78,12 @@ body {
     grid-row: 1 / 2;
 }
 
+.project-card-container {
+    background-color: white;
+    border-left: 8px solid orange;
+    border-radius: 8px;
+}
+
 .announcements-container {
     grid-column: 2 / -1;
     grid-row: 1 / -1;
