@@ -60,6 +60,6 @@ body {
     grid-column: 2 / -1;
     grid-row: 3 / -1;
     display: grid;
-    grid-template-columns: repeat(2, 128px);
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: repeat(8, 64px);
 }
