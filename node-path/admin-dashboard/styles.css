@@ -78,10 +78,15 @@ body {
     grid-row: 1 / 2;
 }
 
-.project-card-container {
+.project-card-container, 
+.announcements-card-container,
+.trending-card-container {
     background-color: white;
-    border-left: 8px solid orange;
     border-radius: 8px;
+}
+
+.project-card-container {
+    border-left: 8px solid orange;
 }
 
 .announcements-container {
