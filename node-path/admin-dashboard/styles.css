@@ -76,3 +76,15 @@ body {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
 }
+
+.announcements-container {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+}
+
+.announcements-label {
+    grid-row: 1 / 2;
+}
