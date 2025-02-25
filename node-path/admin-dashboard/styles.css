@@ -63,3 +63,16 @@ body {
     grid-template-columns: 3fr 1fr;
     grid-template-rows: repeat(8, 64px);
 }
+
+.projects-container {
+    grid-column: 1 / -2;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.5fr repeat(3, 1fr);
+}
+
+.projects-label {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+}
