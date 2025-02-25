@@ -55,3 +55,11 @@ body {
     width: 64px;
     height: 32px;
 }
+
+.account-area {
+    grid-column: 2 / -1;
+    grid-row: 3 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 128px);
+    grid-template-rows: repeat(8, 64px);
+}
