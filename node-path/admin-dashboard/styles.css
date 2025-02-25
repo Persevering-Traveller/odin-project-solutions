@@ -10,7 +10,7 @@ body {
 }
 
 .sidebar {
-    grid-column: 1 / 2;
+    grid-row: 1 / -1;
     background-color: royalblue;
     font-weight: 600;
     color: white;
