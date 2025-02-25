@@ -4,8 +4,8 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 4fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 64px);
     margin: 0;
 }
 
