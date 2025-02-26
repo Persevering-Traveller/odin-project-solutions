@@ -112,11 +112,13 @@ body {
     grid-row: 1 / 2;
 }
 
-.announcement-title {
+.announcement-title,
+.trending-account-name {
     font-size: 14px;
 }
 
-.announcement-body {
+.announcement-body,
+.trending-account-popular-repo {
     font-size: 12px;
 }
 
