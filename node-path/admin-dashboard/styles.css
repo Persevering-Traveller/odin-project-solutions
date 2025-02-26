@@ -56,7 +56,7 @@ body {
 .controlsbar > button {
     background-color: royalblue;
     color: white;
-    border-radius: 8px;
+    border-radius: 16px;
     border-style: none;
     width: 64px;
     height: 32px;
