@@ -98,7 +98,6 @@ body {
 
 .project-card-description {
     font-size: 13px;
-    color: grey;
 }
 
 .announcements-container {
@@ -119,6 +118,12 @@ body {
 
 .announcement-body {
     font-size: 12px;
+}
+
+.project-card-description,
+.announcement-body,
+.trending-account-popular-repo {
+    color: grey;
 }
 
 .sidebar,
