@@ -109,8 +109,22 @@ body {
     grid-template-rows: repeat(10, 1fr);
 }
 
+.announcements-card-container {
+    width: 220px;
+}
+
 .announcements-label {
     grid-row: 1 / 2;
+}
+
+.announcement-body {
+    /* This is as close as can get to recreating that
+     * text overflow effect */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .announcements-card-container,
