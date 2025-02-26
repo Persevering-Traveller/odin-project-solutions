@@ -96,6 +96,11 @@ body {
     border-left: 8px solid orange;
 }
 
+.project-card-description {
+    font-size: 13px;
+    color: grey;
+}
+
 .announcements-container {
     grid-column: 2 / -1;
     grid-row: 1 / -1;
