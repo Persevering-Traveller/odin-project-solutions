@@ -94,6 +94,7 @@ body {
 
 .project-card-container {
     border-left: 8px solid orange;
+    padding: 16px;
 }
 
 .project-card-description {
@@ -110,6 +111,11 @@ body {
 
 .announcements-label {
     grid-row: 1 / 2;
+}
+
+.announcements-card-container,
+.trending-card-container {
+    padding: 32px;
 }
 
 .announcement-title,
