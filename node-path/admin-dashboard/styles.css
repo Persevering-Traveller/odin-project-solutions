@@ -107,3 +107,14 @@ body {
 .announcements-label {
     grid-row: 1 / 2;
 }
+
+.sidebar,
+.header,
+.header button,
+.projects-label,
+.announcements-label,
+.trending-label,
+.project-card-title,
+.announcement-title {
+    font-weight: 700;
+}
