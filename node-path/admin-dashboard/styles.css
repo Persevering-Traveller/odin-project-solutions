@@ -127,6 +127,11 @@ body {
     text-overflow: ellipsis;
 }
 
+.trending-container {
+    grid-column: 2 / -1;
+    grid-row: 6 / -1;
+}
+
 .announcements-card-container,
 .trending-card-container {
     padding: 32px;
