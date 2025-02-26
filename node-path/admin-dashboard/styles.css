@@ -113,6 +113,14 @@ body {
     grid-row: 1 / 2;
 }
 
+.announcement-title {
+    font-size: 14px;
+}
+
+.announcement-body {
+    font-size: 12px;
+}
+
 .sidebar,
 .header,
 .header button,
