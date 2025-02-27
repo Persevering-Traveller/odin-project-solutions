@@ -56,7 +56,7 @@ body {
 
 .controlsbar {
     display: grid;
-    grid-template-columns: 64px 75% 64px 64px 64px;
+    grid-template-columns: 64px 66% 75px 75px 64px;
     grid-template-rows: 1fr;
 }
 
