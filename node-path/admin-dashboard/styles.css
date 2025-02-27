@@ -60,6 +60,16 @@ body {
     grid-template-rows: 1fr;
 }
 
+.greetings {
+    margin-top: 48px;
+    font-size: 12px;
+}
+
+.account-name {
+    display: block;
+    font-size: large;
+}
+
 .controlsbar > button {
     background-color: royalblue;
     color: white;
