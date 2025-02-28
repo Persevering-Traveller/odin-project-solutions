@@ -45,6 +45,7 @@ body {
     display: grid;
     grid-template-columns: 64px 3fr 64px 64px 1fr;
     grid-template-rows: 1fr;
+    margin-top: 10px;
 }
 
 .searchbar {
