@@ -138,6 +138,10 @@ body {
     width: 220px;
 }
 
+.announcements-card-container {
+    padding: 32px;
+}
+
 .announcements-label {
     grid-row: 1 / 2;
 }
@@ -159,12 +163,15 @@ hr {
 .trending-container {
     grid-column: 2 / -1;
     grid-row: 5 / -1;
-    margin-top: 32px;
+    margin-top: 64px;
 }
 
-.announcements-card-container,
 .trending-card-container {
-    padding: 32px;
+    padding: 8px;
+}
+
+.trending-card {
+    padding: 8px;
 }
 
 .announcement-title,
