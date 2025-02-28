@@ -23,6 +23,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 64px repeat(11, 32px);
+    padding-top: 16px;
 }
 
 .sidebar-title {
@@ -98,7 +99,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 0.5fr repeat(3, 1fr);
-    gap: 16px;
+    gap: 16px 0;
 }
 
 .projects-label {
