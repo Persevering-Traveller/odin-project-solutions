@@ -104,6 +104,7 @@ body {
 .projects-label {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
+    padding-left: 16px;
 }
 
 .project-card-container, 
