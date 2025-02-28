@@ -89,6 +89,7 @@ body {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: repeat(8, 64px);
+    padding: 32px 0;
 }
 
 .projects-container {
