@@ -29,6 +29,12 @@ function showLibrary() {
         createNewItem(myLibrary[i].pages, newBookRow);
         createNewItem((myLibrary[i].read) ? "Yes" : "No", newBookRow);
 
+        let removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        newBookRow.appendChild(removeBtn);
+
+        newBookRow.setAttribute("data-id", myLibrary[i].id);
+
         libraryTableBody.appendChild(newBookRow);
     }
 }
