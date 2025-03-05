@@ -43,6 +43,19 @@ newBookBtn.addEventListener("click", () => {
     newBookDialog.showModal();
 });
 
+submitBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(bookForm);
+    addBookToLibrary(formData.get("name"), 
+                     formData.get("author"), 
+                     formData.get("pages"),
+                     formData.get("read"));
+    
+    showLibrary();
+    newBookDialog.close();
+});
+
 closeBtn.addEventListener("click", () => {
     newBookDialog.close();
 });
