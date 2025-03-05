@@ -18,7 +18,8 @@ function addBookToLibrary(name, author, pages, read) {
 }
 
 function showLibrary() {
-    const libraryTable = document.querySelector(".library-table");
+    const libraryTableBody = document.querySelector(".library-table-body");
+    libraryTableBody.textContent = ""; // Clear body to rebuild table
 
     for(let i = 0; i < myLibrary.length; i++) {
         let newBookRow = document.createElement("tr");
@@ -28,7 +29,7 @@ function showLibrary() {
         createNewItem(myLibrary[i].pages, newBookRow);
         createNewItem((myLibrary[i].read) ? "Yes" : "No", newBookRow);
 
-        libraryTable.appendChild(newBookRow);
+        libraryTableBody.appendChild(newBookRow);
     }
 }
 
