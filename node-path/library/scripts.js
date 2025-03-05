@@ -1,4 +1,8 @@
 const myLibrary = [];
+const newBookBtn = document.querySelector(".new-book");
+const submitBtn = document.querySelector(".submit-btn");
+const closeBtn = document.querySelector(".close-btn");
+const newBookDialog = document.querySelector(".book-entry");
 
 function Book(name, author, pages, read) {
     this.id = crypto.randomUUID();
@@ -32,3 +36,12 @@ function createNewItem(contents, tableRow) {
     newItem.textContent = contents;
     tableRow.appendChild(newItem);
 }
+
+
+newBookBtn.addEventListener("click", () => {
+    newBookDialog.showModal();
+});
+
+closeBtn.addEventListener("click", () => {
+    newBookDialog.close();
+});
