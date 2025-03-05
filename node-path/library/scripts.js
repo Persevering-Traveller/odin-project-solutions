@@ -3,6 +3,7 @@ const newBookBtn = document.querySelector(".new-book");
 const submitBtn = document.querySelector(".submit-btn");
 const closeBtn = document.querySelector(".close-btn");
 const newBookDialog = document.querySelector(".book-entry");
+const bookForm = document.querySelector("#book-form");
 
 function Book(name, author, pages, read) {
     this.id = crypto.randomUUID();
