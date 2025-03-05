@@ -29,6 +29,6 @@ function showLibrary() {
 
 function createNewItem(contents, tableRow) {
     newItem = document.createElement("td");
-    newItem.innerText = contents;
+    newItem.textContent = contents;
     tableRow.appendChild(newItem);
 }
