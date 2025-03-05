@@ -16,5 +16,28 @@
     <th>Number of Pages</th>
     <th>Read?</th>
   </table>
+
+  <dialog class="book-entry">
+    <form action="" method="post">
+      <div class="field">
+        <label for="name">Book Name</label>
+        <input type="text" id="name" name="name">
+      </div>
+      <div class="field">
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author">
+      </div>
+      <div class="field">
+        <label for="pages">Pages</label>
+        <input type="number" id="pages" name="pages">
+      </div>
+      <div class="field">
+        <label for="read">Read?</label>
+        <input type="checkbox" id="read" name="read">
+      </div>
+      <button class="submit-btn" type="submit">Submit</button>
+      <button class="close-btn">Close</button>
+    </form>
+  </dialog>
 </body>
 </html>
