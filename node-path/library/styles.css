@@ -1,0 +1,17 @@
+body {
+    background-color: #fff6d3 ;
+}
+
+h1, .library-table, .book-entry, button {
+    color: #7c3f58;
+}
+
+.library-table {
+    background-color: #eb6b6f;
+}
+
+button {
+    background-color: #f9a875;
+}
+
+
