@@ -79,6 +79,7 @@ submitBtn.addEventListener("click", (event) => {
     newBookDialog.close();
 });
 
-closeBtn.addEventListener("click", () => {
+closeBtn.addEventListener("click", (event) => {
+    event.preventDefault();
     newBookDialog.close();
 });
