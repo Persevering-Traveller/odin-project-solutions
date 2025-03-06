@@ -46,7 +46,8 @@ function showLibrary() {
         let readBtn = document.createElement("button");
         readBtn.textContent = "Read/Not Read";
         readBtn.addEventListener("click", () => {
-            // Toggle read
+            myLibrary[i].toggleRead();
+            showLibrary() // Rebuild library to see changes.
         });
         newBookRow.appendChild(readBtn);
 
