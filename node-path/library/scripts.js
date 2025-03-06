@@ -33,6 +33,14 @@ function showLibrary() {
         createNewItem(myLibrary[i].author, newBookRow);
         createNewItem(myLibrary[i].pages, newBookRow);
         createNewItem((myLibrary[i].read) ? "Yes" : "No", newBookRow);
+        
+        let readBtn = document.createElement("button");
+        readBtn.textContent = "Read/Not Read";
+        readBtn.addEventListener("click", () => {
+            myLibrary[i].toggleRead();
+            showLibrary() // Rebuild library to see changes.
+        });
+        newBookRow.appendChild(readBtn);
 
         let removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
@@ -42,14 +50,6 @@ function showLibrary() {
             showLibrary(); // Rebuild library after deleting to properly update indices
         });
         newBookRow.appendChild(removeBtn);
-
-        let readBtn = document.createElement("button");
-        readBtn.textContent = "Read/Not Read";
-        readBtn.addEventListener("click", () => {
-            myLibrary[i].toggleRead();
-            showLibrary() // Rebuild library to see changes.
-        });
-        newBookRow.appendChild(readBtn);
 
         libraryTableBody.appendChild(newBookRow);
     }
