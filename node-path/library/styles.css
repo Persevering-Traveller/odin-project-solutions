@@ -6,14 +6,19 @@ body {
     background-color: #fff6d3 ;
 }
 
-h1, .library-table, .book-entry, button {
+h1, thead, .book-entry, button {
     color: #7c3f58;
+}
+
+tbody {
+    color: #fff6d3;
 }
 
 .library-table {
     background-color: #eb6b6f;
     border: 3px solid #7c3f58;
 }
+
 
 button {
     background-color: #f9a875;
