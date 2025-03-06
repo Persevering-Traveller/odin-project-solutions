@@ -23,6 +23,7 @@ function showLibrary() {
 
     for(let i = 0; i < myLibrary.length; i++) {
         let newBookRow = document.createElement("tr");
+        newBookRow.setAttribute("data-id", myLibrary[i].id);
 
         createNewItem(myLibrary[i].name, newBookRow);
         createNewItem(myLibrary[i].author, newBookRow);
@@ -31,9 +32,12 @@ function showLibrary() {
 
         let removeBtn = document.createElement("button");
         removeBtn.textContent = "Remove";
+        removeBtn.addEventListener("click", () => {
+            document.querySelector(`[data-id="${myLibrary[i].id}"]`).remove();
+            myLibrary.splice(i, 1);
+            showLibrary(); // Rebuild library after deleting to properly update indices
+        });
         newBookRow.appendChild(removeBtn);
-
-        newBookRow.setAttribute("data-id", myLibrary[i].id);
 
         libraryTableBody.appendChild(newBookRow);
     }
