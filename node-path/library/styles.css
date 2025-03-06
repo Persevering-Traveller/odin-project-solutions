@@ -12,6 +12,8 @@ h1, .library-table, .book-entry, button {
 
 button {
     background-color: #f9a875;
+    border-radius: 8px;
+    border: 2px solid #7c3f58;
 }
 
 
