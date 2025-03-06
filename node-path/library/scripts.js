@@ -39,6 +39,13 @@ function showLibrary() {
         });
         newBookRow.appendChild(removeBtn);
 
+        let readBtn = document.createElement("button");
+        readBtn.textContent = "Read/Not Read";
+        readBtn.addEventListener("click", () => {
+            // Toggle read
+        });
+        newBookRow.appendChild(readBtn);
+
         libraryTableBody.appendChild(newBookRow);
     }
 }
