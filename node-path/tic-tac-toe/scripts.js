@@ -8,7 +8,7 @@ const gameBoard = (function () {
             board.push(" "); // Spaces in 3x3 area
     }
 
-    const getBoard = () => board.slice(); // Return a copy, not direct access to the board
+    const getBoard = () => board;
 
     const getBoardSpotAt = function (spotAt) {
         if(isValidSpot(spotAt))
@@ -23,4 +23,15 @@ const gameBoard = (function () {
     return { createGameBoard, getBoard, getBoardSpotAt, makeSpotAt };
 })();
 
-gameBoard.createGameBoard();
+function createPlayer(sign) {
+    let sign = sign;
+    let score = 0;
+
+    const getSign = () => sign;
+    const assignNewSign = (newSign) => sign = newSign;
+    
+    const getScore = () => score;
+    const givePoint = () => score++;
+
+    return { getSign, assignNewSign, getScore, givePoint };
+}
