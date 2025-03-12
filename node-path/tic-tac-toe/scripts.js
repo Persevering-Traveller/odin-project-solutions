@@ -36,12 +36,8 @@ function createPlayer(sign) {
 }
 
 const gameManager = (function () {
-    let player, cpu;
-
     const startGame = () => {
         gameBoard.createGameBoard();
-        player = createPlayer("X");
-        cpu = createPlayer("O");
     }
 
     const checkWinner = function () {
@@ -102,3 +98,8 @@ const gameManager = (function () {
 
     return { startGame, checkWinner, playerMakeMove };
 })();
+
+const player = createPlayer("X");
+const cpu = createPlayer("O");
+
+gameManager.startGame();
