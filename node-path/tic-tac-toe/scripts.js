@@ -91,7 +91,7 @@ const gameManager = (function () {
         sign = currentBoard[0]; // The \ cross win
         if(sign !== " " && sign === currentBoard[4] && sign === currentBoard[8])
             winningSign = sign;
-        sign = currentBoard[3] // The / cross win
+        sign = currentBoard[2] // The / cross win
         if(sign !== " " && sign === currentBoard[4] && sign === currentBoard[6])
             winningSign = sign;
 
