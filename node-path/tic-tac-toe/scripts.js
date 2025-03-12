@@ -115,6 +115,7 @@ const gameManager = (function () {
         }
         gameBoard.makeSpotAt(player.getSign(), spot);
         gameBoard.showBoard();
+        checkWinner();
     }
 
     return { startGame, checkWinner, playerMakeMove };
