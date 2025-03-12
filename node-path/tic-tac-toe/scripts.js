@@ -10,6 +10,25 @@ const gameBoard = (function () {
 
     const getBoard = () => board;
 
+    const showBoard = function () {
+        let count = 1;
+        let boardString = "";
+        for(const spot of board) {
+            switch(count) {
+                case 1:
+                case 2: 
+                    boardString += ` ${spot} |`;
+                    count++;
+                    break;
+                case 3: 
+                    boardString += ` ${spot} \n`;
+                    count = 1;
+                    break;
+            }
+        }
+        console.log(boardString);
+    }
+
     const getBoardSpotAt = function (spotAt) {
         if(isValidSpot(spotAt))
             return board[spotAt];
@@ -20,7 +39,7 @@ const gameBoard = (function () {
             board[spotAt] = sign;
     }
 
-    return { createGameBoard, getBoard, getBoardSpotAt, makeSpotAt };
+    return { createGameBoard, getBoard, showBoard, getBoardSpotAt, makeSpotAt };
 })();
 
 function createPlayer(sign) {
