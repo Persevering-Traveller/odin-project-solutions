@@ -89,5 +89,13 @@ const gameManager = (function () {
         }
     }
 
-    return { startGame, checkWinner };
+    const playerMakeMove = function(player, spot) {
+        if(spot < 0 || spot > 8) {
+            console.log("Not a valid spot");
+            return;
+        }
+        gameBoard.makeSpotAt(player.getSign(), spot);
+    }
+
+    return { startGame, checkWinner, playerMakeMove };
 })();
