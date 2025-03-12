@@ -24,7 +24,6 @@ const gameBoard = (function () {
 })();
 
 function createPlayer(sign) {
-    let sign = sign;
     let score = 0;
 
     const getSign = () => sign;
@@ -92,6 +91,10 @@ const gameManager = (function () {
     const playerMakeMove = function(player, spot) {
         if(spot < 0 || spot > 8) {
             console.log("Not a valid spot");
+            return;
+        }
+        else if (gameBoard.getBoard()[spot] !== " ") {
+            console.log("That spot has been played");
             return;
         }
         gameBoard.makeSpotAt(player.getSign(), spot);
