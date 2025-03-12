@@ -57,6 +57,7 @@ function createPlayer(sign) {
 const gameManager = (function () {
     const startGame = () => {
         gameBoard.createGameBoard();
+        gameBoard.showBoard();
     }
 
     const checkWinner = function () {
@@ -113,6 +114,7 @@ const gameManager = (function () {
             return;
         }
         gameBoard.makeSpotAt(player.getSign(), spot);
+        gameBoard.showBoard();
     }
 
     return { startGame, checkWinner, playerMakeMove };
