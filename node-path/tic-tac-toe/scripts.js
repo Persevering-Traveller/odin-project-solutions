@@ -55,8 +55,11 @@ function createPlayer(sign) {
 }
 
 const gameManager = (function () {
+    let cpu; // The CPU player
+
     const startGame = () => {
         gameBoard.createGameBoard();
+        cpu = createPlayer("O");
         gameBoard.showBoard();
     }
 
@@ -122,6 +125,5 @@ const gameManager = (function () {
 })();
 
 const player = createPlayer("X");
-const cpu = createPlayer("O");
 
 gameManager.startGame();
