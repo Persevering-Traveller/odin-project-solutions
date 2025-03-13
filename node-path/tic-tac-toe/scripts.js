@@ -138,7 +138,7 @@ const gameManager = (function () {
         let chosenSpot = Math.floor(Math.random() * 9);
 
         // Lazy decision making at its finest :)
-        if(gameBoard.getBoardSpotAt(chosenSpot) === cpu.getSign() ||
+        while(gameBoard.getBoardSpotAt(chosenSpot) === cpu.getSign() ||
         gameBoard.getBoardSpotAt(chosenSpot) === player.getSign())
             chosenSpot = Math.random() * 9;
 
