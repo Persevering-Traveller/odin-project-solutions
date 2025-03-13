@@ -107,7 +107,7 @@ const gameManager = (function () {
         }
     }
 
-    const playerMakeMove = function(player, spot) {
+    const playerMakeMove = function(moveMaker, spot) {
         if(spot < 0 || spot > 8) {
             console.log("Not a valid spot");
             return;
@@ -116,9 +116,25 @@ const gameManager = (function () {
             console.log("That spot has been played");
             return;
         }
-        gameBoard.makeSpotAt(player.getSign(), spot);
+        gameBoard.makeSpotAt(moveMaker.getSign(), spot);
         gameBoard.showBoard();
         checkWinner();
+        if(moveMaker.getSign() === player.getSign()) {
+            cpuDecideMove();
+            checkWinner();
+        }
+    }
+
+    const cpuDecideMove = function() {
+        console.log("CPU's Turn:");
+        let chosenSpot = Math.floor(Math.random() * 9);
+
+        // Lazy decision making at its finest :)
+        if(gameBoard.getBoardSpotAt(chosenSpot) === cpu.getSign() ||
+        gameBoard.getBoardSpotAt(chosenSpot) === player.getSign())
+            chosenSpot = Math.random() * 9;
+
+        playerMakeMove(cpu, chosenSpot);
     }
 
     return { startGame, checkWinner, playerMakeMove };
