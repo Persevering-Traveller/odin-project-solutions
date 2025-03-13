@@ -136,11 +136,22 @@ const gameManager = (function () {
         if(gameOver) return;
         console.log("CPU's Turn:");
         let chosenSpot = Math.floor(Math.random() * 9);
+        let count = 0;
 
         // Lazy decision making at its finest :)
         while(gameBoard.getBoardSpotAt(chosenSpot) === cpu.getSign() ||
-        gameBoard.getBoardSpotAt(chosenSpot) === player.getSign())
+        gameBoard.getBoardSpotAt(chosenSpot) === player.getSign()) {
             chosenSpot = Math.random() * 9;
+            count++;
+            // If the CPU has looked for a chosen spot up to 9 times in one move,
+            // then that means there are no more empty spaces to play,
+            // which means a tie game
+            if(count === 9) {
+                gameOver = true;
+                console.log("Looks like a tie game!");
+                return;
+            }
+        }
 
         playerMakeMove(cpu, chosenSpot);
     }
