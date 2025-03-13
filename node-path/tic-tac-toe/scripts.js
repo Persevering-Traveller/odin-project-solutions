@@ -56,6 +56,7 @@ function createPlayer(sign) {
 
 const gameManager = (function () {
     let cpu; // The CPU player
+    let gameOver = false;
 
     const startGame = () => {
         gameBoard.createGameBoard();
@@ -64,6 +65,8 @@ const gameManager = (function () {
     }
 
     const checkWinner = function () {
+        if(gameOver) return;
+
         const currentBoard = gameBoard.getBoard();
         // Check for all possible horizontal wins, all vertical wins, and the cross wins
         /* 0 | 1 | 2
@@ -100,14 +103,18 @@ const gameManager = (function () {
 
         // Declare winner
         if(winningSign !== "") {
-            if(winningSign === player.getSign())
+            if(winningSign === player.getSign()) 
                 console.log("You win!!");
             else if (winningSign === cpu.getSign())
                 console.log("The CPU wins this round!");
+
+            gameOver = true;
         }
     }
 
     const playerMakeMove = function(moveMaker, spot) {
+        if(gameOver) return;
+
         if(spot < 0 || spot > 8) {
             console.log("Not a valid spot");
             return;
@@ -126,6 +133,7 @@ const gameManager = (function () {
     }
 
     const cpuDecideMove = function() {
+        if(gameOver) return;
         console.log("CPU's Turn:");
         let chosenSpot = Math.floor(Math.random() * 9);
 
