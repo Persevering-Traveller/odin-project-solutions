@@ -5,6 +5,11 @@
     --border-size: 4px solid;
 }
 
+.title {
+    text-align: center;
+    margin: 32px;
+}
+
 .container {
     width: 500px;
     height: 500px;
