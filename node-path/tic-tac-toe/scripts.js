@@ -106,10 +106,16 @@ const gameManager = (function () {
 
         // Declare winner
         if(winningSign !== "") {
-            if(winningSign === player.getSign()) 
-                console.log("You win!!");
-            else if (winningSign === cpu.getSign())
-                console.log("The CPU wins this round!");
+            if(winningSign === player.getSign()) {
+                const playerWinText = "You win!!";
+                console.log(playerWinText);
+                domManager.putWinningText(playerWinText);
+            }
+            else if (winningSign === cpu.getSign()) {
+                const cpuWinText = "The CPU wins this round!";
+                console.log(cpuWinText);
+                domManager.putWinningText(cpuWinText);
+            }
 
             gameOver = true;
         }
@@ -184,8 +190,12 @@ const domManager = (function () {
     // grab restart button and add onclick for restarting game
     // grab the text entered into the text area to display when the player wins
     // by default make it "Player 1"
+    const putWinningText = (winningText) => {
+        const resultsText = document.querySelector(".results");
+        resultsText.textContent = winningText;
+    }
 
-    return { setup, showCPUMove };
+    return { setup, showCPUMove, putWinningText };
 })();
 
 const player = createPlayer("X");
