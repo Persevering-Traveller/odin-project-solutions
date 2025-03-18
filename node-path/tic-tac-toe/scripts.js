@@ -107,7 +107,7 @@ const gameManager = (function () {
         // Declare winner
         if(winningSign !== "") {
             if(winningSign === player.getSign()) {
-                const playerWinText = "You win!!";
+                const playerWinText =  `${domManager.getPlayerName()} wins!!`;
                 console.log(playerWinText);
                 domManager.putWinningText(playerWinText);
             }
@@ -170,6 +170,7 @@ const gameManager = (function () {
 })();
 
 const domManager = (function () {
+    const playerName = document.querySelector(".name").value;
     // Grab all the .spot divs
     const spots = document.querySelectorAll(".spot");
     // add an onclick check and add the appropriate symbol when clicked
@@ -184,6 +185,8 @@ const domManager = (function () {
         });
     }
 
+    const getPlayerName = () => playerName;
+
     const showCPUMove = (cpuSign, chosenSpot) => {
         spots[chosenSpot].innerText = cpuSign;
     }
@@ -195,7 +198,7 @@ const domManager = (function () {
         resultsText.textContent = winningText;
     }
 
-    return { setup, showCPUMove, putWinningText };
+    return { setup, getPlayerName, showCPUMove, putWinningText };
 })();
 
 const player = createPlayer("X");
