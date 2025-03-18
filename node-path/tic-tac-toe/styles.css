@@ -7,7 +7,17 @@
 
 .title {
     text-align: center;
-    margin: 32px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+.results {
+    text-align: center;
+    font-size: 28px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 32px;
+    margin-top: 8px;
+    margin-bottom: 32px;
 }
 
 .container {
