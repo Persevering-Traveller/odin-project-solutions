@@ -171,9 +171,9 @@ const gameManager = (function () {
 
 const domManager = (function () {
     let playerName = "";
-    // Grab all the .spot divs
+    
     const spots = document.querySelectorAll(".spot");
-    // add an onclick check and add the appropriate symbol when clicked
+    
     const setup = () => {
         spots.forEach((spot, i) => {
             spot.addEventListener("click", () => {
@@ -191,9 +191,7 @@ const domManager = (function () {
     const showCPUMove = (cpuSign, chosenSpot) => {
         spots[chosenSpot].innerText = cpuSign;
     }
-    // grab restart button and add onclick for restarting game
-    // grab the text entered into the text area to display when the player wins
-    // by default make it "Player 1"
+
     const putWinningText = (winningText) => {
         const resultsText = document.querySelector(".results");
         resultsText.textContent = winningText;
