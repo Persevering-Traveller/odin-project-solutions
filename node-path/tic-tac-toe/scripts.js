@@ -196,6 +196,8 @@ const domManager = (function () {
                 }
             });
         });
+
+        playerName = document.querySelector(".name").value;
     }
 
     const restartGame = () =>  {
