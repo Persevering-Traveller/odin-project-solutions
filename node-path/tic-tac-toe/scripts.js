@@ -117,6 +117,7 @@ const gameManager = (function () {
                 domManager.putWinningText(cpuWinText);
             }
 
+            domManager.createRestartButton();
             gameOver = true;
         }
     }
@@ -197,7 +198,19 @@ const domManager = (function () {
         resultsText.textContent = winningText;
     }
 
-    return { setup, getPlayerName, setPlayerName, showCPUMove, putWinningText };
+    const createRestartButton = () => {
+        let restartButton = document.createElement("button");
+        restartButton.textContent = "Restart";
+        restartButton.addEventListener("click", () => {
+            //restart();
+            restartButton.remove();
+        });
+
+        const resultsContainer = document.querySelector(".results-container");
+        resultsContainer.appendChild(restartButton);
+    }
+
+    return { setup, getPlayerName, setPlayerName, showCPUMove, putWinningText, createRestartButton };
 })();
 
 const player = createPlayer("X");
@@ -209,4 +222,4 @@ submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
     const nameEntry = document.querySelector(".name").value;
     domManager.setPlayerName(nameEntry);
-})
+});
