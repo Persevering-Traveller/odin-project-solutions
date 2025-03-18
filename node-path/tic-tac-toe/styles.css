@@ -5,6 +5,12 @@
     --border-size: 4px solid;
 }
 
+.name-entry {
+    width: 280px;
+    padding: 16px;
+    margin: 0 auto;
+}
+
 .title {
     text-align: center;
     margin-top: 32px;
