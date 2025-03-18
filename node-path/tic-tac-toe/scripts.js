@@ -62,6 +62,7 @@ const gameManager = (function () {
         gameBoard.createGameBoard();
         cpu = createPlayer("O");
         gameBoard.showBoard();
+        domManager.setup();
     }
 
     const checkWinner = function () {
@@ -154,9 +155,35 @@ const gameManager = (function () {
         }
 
         playerMakeMove(cpu, chosenSpot);
+        domManager.showCPUMove(cpu.getSign(), chosenSpot);
     }
 
     return { startGame, checkWinner, playerMakeMove };
+})();
+
+const domManager = (function () {
+    // Grab all the .spot divs
+    const spots = document.querySelectorAll(".spot");
+    // add an onclick check and add the appropriate symbol when clicked
+    const setup = () => {
+        spots.forEach((spot, i) => {
+            spot.addEventListener("click", () => {
+                if(spot.textContent === "") {
+                    gameManager.playerMakeMove(player, i);
+                    spot.textContent = player.getSign();
+                }
+            });
+        });
+    }
+
+    const showCPUMove = (cpuSign, chosenSpot) => {
+        spots[chosenSpot].innerText = cpuSign;
+    }
+    // grab restart button and add onclick for restarting game
+    // grab the text entered into the text area to display when the player wins
+    // by default make it "Player 1"
+
+    return { setup, showCPUMove };
 })();
 
 const player = createPlayer("X");
