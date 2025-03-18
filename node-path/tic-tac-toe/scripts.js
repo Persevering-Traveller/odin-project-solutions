@@ -58,6 +58,8 @@ const gameManager = (function () {
     let cpu; // The CPU player
     let gameOver = false;
 
+    const isGameOver = () => gameOver === true;
+
     const startGame = () => {
         gameBoard.createGameBoard();
         cpu = createPlayer("O");
@@ -158,7 +160,7 @@ const gameManager = (function () {
         domManager.showCPUMove(cpu.getSign(), chosenSpot);
     }
 
-    return { startGame, checkWinner, playerMakeMove };
+    return { startGame, checkWinner, playerMakeMove, isGameOver };
 })();
 
 const domManager = (function () {
@@ -168,7 +170,7 @@ const domManager = (function () {
     const setup = () => {
         spots.forEach((spot, i) => {
             spot.addEventListener("click", () => {
-                if(spot.textContent === "") {
+                if(spot.textContent === "" && !gameManager.isGameOver()) {
                     gameManager.playerMakeMove(player, i);
                     spot.textContent = player.getSign();
                 }
