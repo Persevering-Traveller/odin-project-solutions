@@ -170,7 +170,7 @@ const gameManager = (function () {
 })();
 
 const domManager = (function () {
-    const playerName = document.querySelector(".name").value;
+    let playerName = "";
     // Grab all the .spot divs
     const spots = document.querySelectorAll(".spot");
     // add an onclick check and add the appropriate symbol when clicked
@@ -185,6 +185,7 @@ const domManager = (function () {
         });
     }
 
+    const setPlayerName = (newName) => playerName = newName; 
     const getPlayerName = () => playerName;
 
     const showCPUMove = (cpuSign, chosenSpot) => {
@@ -198,9 +199,16 @@ const domManager = (function () {
         resultsText.textContent = winningText;
     }
 
-    return { setup, getPlayerName, showCPUMove, putWinningText };
+    return { setup, getPlayerName, setPlayerName, showCPUMove, putWinningText };
 })();
 
 const player = createPlayer("X");
 
 gameManager.startGame();
+
+const submitBtn = document.querySelector(".submit-btn");
+submitBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    const nameEntry = document.querySelector(".name").value;
+    domManager.setPlayerName(nameEntry);
+})
