@@ -170,7 +170,10 @@ const gameManager = (function () {
             // which means a tie game
             if(count === 9) {
                 gameOver = true;
-                console.log("Looks like a tie game!");
+                let tieGameText = "Looks like a tie game!"
+                console.log(tieGameText);
+                domManager.putWinningText(tieGameText);
+                domManager.createRestartButton();
                 return;
             }
         }
