@@ -10,6 +10,10 @@ const gameBoard = (function () {
 
     const getBoard = () => board;
 
+    const resetBoard = () => {
+        board.forEach((spot) => spot = " ");
+    }
+
     const showBoard = function () {
         let count = 1;
         let boardString = "";
@@ -39,7 +43,7 @@ const gameBoard = (function () {
             board[spotAt] = sign;
     }
 
-    return { createGameBoard, getBoard, showBoard, getBoardSpotAt, makeSpotAt };
+    return { createGameBoard, getBoard, resetBoard, showBoard, getBoardSpotAt, makeSpotAt };
 })();
 
 function createPlayer(sign) {
