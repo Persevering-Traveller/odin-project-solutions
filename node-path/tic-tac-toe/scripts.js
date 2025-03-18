@@ -190,6 +190,13 @@ const domManager = (function () {
         });
     }
 
+    const restartGame = () =>  {
+        spots.forEach((spot) => spot.textContent = "");
+        const resultsText = document.querySelector(".results");
+        resultsText.textContent = "";
+        //gameManager.restartGame();
+    }
+
     const setPlayerName = (newName) => playerName = newName; 
     const getPlayerName = () => playerName;
 
@@ -206,7 +213,7 @@ const domManager = (function () {
         let restartButton = document.createElement("button");
         restartButton.textContent = "Restart";
         restartButton.addEventListener("click", () => {
-            //restart();
+            restartGame();
             restartButton.remove();
         });
 
