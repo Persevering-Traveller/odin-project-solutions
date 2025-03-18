@@ -11,7 +11,9 @@ const gameBoard = (function () {
     const getBoard = () => board;
 
     const resetBoard = () => {
-        board.forEach((spot) => spot = " ");
+        for(let i = 0; i < board.length; i++) {
+            board[i] = " ";
+        }
     }
 
     const showBoard = function () {
