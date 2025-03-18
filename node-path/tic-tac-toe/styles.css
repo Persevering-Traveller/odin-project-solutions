@@ -5,6 +5,12 @@
     --border-size: 4px solid;
 }
 
+a {
+    display: block;
+    text-align: center;
+    margin: 8px auto;
+}
+
 .name-entry {
     width: 330px;
     padding: 16px;
