@@ -71,6 +71,12 @@ const gameManager = (function () {
         domManager.setup();
     }
 
+    const restartGame = () => {
+        gameBoard.resetBoard();
+        gameOver = false;
+        gameBoard.showBoard();
+    }
+
     const checkWinner = function () {
         if(gameOver) return;
 
@@ -171,7 +177,7 @@ const gameManager = (function () {
         domManager.showCPUMove(cpu.getSign(), chosenSpot);
     }
 
-    return { startGame, checkWinner, playerMakeMove, isGameOver };
+    return { startGame, restartGame, checkWinner, playerMakeMove, isGameOver };
 })();
 
 const domManager = (function () {
@@ -194,7 +200,7 @@ const domManager = (function () {
         spots.forEach((spot) => spot.textContent = "");
         const resultsText = document.querySelector(".results");
         resultsText.textContent = "";
-        //gameManager.restartGame();
+        gameManager.restartGame();
     }
 
     const setPlayerName = (newName) => playerName = newName; 
