@@ -5,16 +5,23 @@ const closeBtn = document.querySelector(".close-btn");
 const newBookDialog = document.querySelector(".book-entry");
 const bookForm = document.querySelector("#book-form");
 
-function Book(name, author, pages, read) {
-    this.id = crypto.randomUUID();
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
+class Book {
+    id = crypto.randomUUID();
+    name;
+    author;
+    pages;
+    read;
 
-Book.prototype.toggleRead = function() {
-    this.read = !this.read;
+    constructor(name, author, pages, read) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    toggleRead() {
+        this.read = !this.read;
+    }
 }
 
 function addBookToLibrary(name, author, pages, read) {
