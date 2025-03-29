@@ -14,3 +14,4 @@ bootcamp
 * Sign-Up Form
 * Library
 * Tic-Tac-Toe
+* Restaurant Page
