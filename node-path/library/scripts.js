@@ -81,6 +81,22 @@ newBookBtn.addEventListener("click", () => {
 submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
+    if (nameEntry.validity.valueMissing) {
+        nameEntry.setCustomValidity("Must enter a book name");
+        nameEntry.reportValidity();
+        return;
+    }
+    if (authorEntry.validity.valueMissing) {
+        authorEntry.setCustomValidity("Must enter author name");
+        authorEntry.reportValidity();
+        return;
+    }
+    if (pagesEntry.validity.valueMissing) {
+        pagesEntry.setCustomValidity("Must enter page amount");
+        pagesEntry.reportValidity();
+        return;
+    }
+
     const formData = new FormData(bookForm);
     addBookToLibrary(formData.get("name"), 
                      formData.get("author"), 
