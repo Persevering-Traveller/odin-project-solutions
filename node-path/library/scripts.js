@@ -5,6 +5,11 @@ const closeBtn = document.querySelector(".close-btn");
 const newBookDialog = document.querySelector(".book-entry");
 const bookForm = document.querySelector("#book-form");
 
+// Validation
+const nameEntry = document.querySelector("#name");
+const authorEntry = document.querySelector("#author");
+const pagesEntry = document.querySelector("#pages");
+
 class Book {
     id = crypto.randomUUID();
     name;
